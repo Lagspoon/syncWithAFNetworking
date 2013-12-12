@@ -8,9 +8,10 @@
 
 #import "SYHTTPClient.h"
 
+#warning need2update
 #define kAPIBaseURLString @"https://api.parse.com/1/"
-#define kAPIApplicationId @"C2XRFUHGSMgrAK1Cd3qa1DQkgDiqR4f0T2bMlu5l"
-#define kAPIRestKey @"SDOjQgF3s7ACDyACeXiGxbKzx3zYbcm42Mn5vjy4"
+#define kAPIApplicationId @""
+#define kAPIRestKey @""
 
 @interface SYHTTPClient()
 
@@ -53,12 +54,6 @@ if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]i
     return sharedClient;
 }
 
-#warning to delete
-/*- (AFHTTPRequestOperationManager *)requestOpManagerWithBaseURL:(NSURL *)url {
-
-    [self.requestOpManager setRequestSerializer:self.requestSerializer];
-    return self.requestOpManager;
-}*/
 ////////////////////////////////////////////////////
 //REQUEST CREATION
 #pragma mark - REQUEST CREATION
