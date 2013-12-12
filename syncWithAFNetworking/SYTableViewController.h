@@ -1,5 +1,5 @@
 //
-//  SYViewController.h
+//  SYTableViewController.h
 //  syncWithAFNetworking
 //
 //  Created by Olivier Delecueillerie on 19/11/2013.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SYViewController : UIViewController
+#import <CoreData/CoreData.h>
+@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @end

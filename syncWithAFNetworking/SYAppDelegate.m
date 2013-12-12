@@ -7,12 +7,16 @@
 //
 
 #import "SYAppDelegate.h"
+#import "SYSyncEngine.h"
+#import "Drink.h"
 
 @implementation SYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [[SYSyncEngine sharedEngine] registerNSManagedObjectClassToSync:[Drink class]];
+
     return YES;
 }
 							
@@ -36,6 +40,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[SYSyncEngine sharedEngine] startSync];
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
