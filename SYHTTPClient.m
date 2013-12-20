@@ -10,8 +10,8 @@
 
 #warning need2update
 #define kAPIBaseURLString @"https://api.parse.com/1/"
-#define kAPIApplicationId @"SBp57yZr0sO7DFAN2Gw5mqa5gk50dPVq8BLzg81K"
-#define kAPIRestKey @"pJFEZvc9yoVqguC6eylmyMZUxNaL3ob7jj4yPwsd"
+#define kAPIApplicationId @""
+#define kAPIRestKey @""
 
 @interface SYHTTPClient()
 
