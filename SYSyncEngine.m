@@ -7,16 +7,14 @@
 //
 
 #import "SYSyncEngine.h"
-#import <CoreData/CoreData.h>
 #import "SYCoreDataStackWithSyncStuff.h"
 #import "AFHTTPRequestOperation.h"
 #import "SYHTTPClient.h"
 #import "NSManagedObject+JSON.h"
-#import "Drink.h"
-
 
 NSString * const kSDSyncEngineInitialCompleteKey = @"SDSyncEngineInitialSyncCompleted";
 NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSyncCompleted";
+
 
 @interface SYSyncEngine()
 
@@ -27,7 +25,7 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
 
 
 @implementation SYSyncEngine
-
+#pragma mark-
 ///////////////////////////////////////////////////////////////////
 //LAZY instantiation
 #pragma mark - LAZY instantiation
@@ -76,6 +74,8 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
 - (void)setInitialSyncCompleted {
     [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kSDSyncEngineInitialCompleteKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kSDSyncEngineInitialCompleteKey" object:self];
+    NSLog(@"notification initial sync completed launch");
 }
 
 //When sync operations are completed we call this method to send a notification and change the flag syncInProgress
@@ -85,15 +85,21 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
         
         [self.backgroundManagedObjectContext performBlockAndWait:^{
             NSError *error = nil;
-            BOOL saved = [self.backgroundManagedObjectContext save:&error];
-            if (!saved) {
+            //!!!!!!!!!!!!!!!!!!!
+            if (![self.backgroundManagedObjectContext save:&error]) {
                 // do some real error handling
-                NSLog(@"Could not save background context due to %@", error);
+                NSLog(@"Could not save master context due to %@", error);
+            }
+            if (![[self.backgroundManagedObjectContext parentContext] save:&error]) {
+                // do some real error handling
+                NSLog(@"Could not save master context due to %@", error);
             }
         }];
         
 #warning Don't forget to save the Managed Object Context used elsewhere for reading purpose
         [[NSNotificationCenter defaultCenter] postNotificationName:kSDSyncEngineSyncCompletedNotificationName object:nil];
+        NSLog(@"lauch the syncCompleted notification");
+
         [self willChangeValueForKey:@"syncInProgress"];
         _syncInProgress = NO;
         [self didChangeValueForKey:@"syncInProgress"];
@@ -177,7 +183,7 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
     
     NSArray * batchOperations = [AFURLConnectionOperation batchOfRequestOperations:operations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations)
     {
-        NSLog(@"%d of %d complete", numberOfFinishedOperations, totalNumberOfOperations);
+        NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
     } completionBlock:^(NSArray *operations)
     {
         NSLog(@"All operations in batch complete");
@@ -301,7 +307,8 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
 
 //Create a new record in COre Data
 - (void)newManagedObjectWithClassName:(NSString *)className forRecord:(NSDictionary *)record {
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Drink" inManagedObjectContext:self.backgroundManagedObjectContext];
+    
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:className inManagedObjectContext:self.backgroundManagedObjectContext];
     [record enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         [self setValue:obj forKey:key forManagedObject:newManagedObject];
     }];

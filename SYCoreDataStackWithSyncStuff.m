@@ -15,6 +15,7 @@
 
 @implementation SYCoreDataStackWithSyncStuff
 
+
 + (id)sharedInstance {
     static dispatch_once_t once;
     static SYCoreDataStackWithSyncStuff *sharedInstance;
@@ -31,12 +32,11 @@
         return _backgroundManagedObjectContext;
     }
     
-    NSManagedObjectContext *masterContext = self.managedObjectContext;
-    if (masterContext != nil) {
+    if (self.managedObjectContext != nil) {
         _backgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [_backgroundManagedObjectContext performBlockAndWait:^{
-            //[_backgroundManagedObjectContext setParentContext:masterContext];
-            [_backgroundManagedObjectContext setPersistentStoreCoordinator: self.persistentStoreCoordinator];
+            [_backgroundManagedObjectContext setParentContext:self.managedObjectContext];
+            //[_backgroundManagedObjectContext setPersistentStoreCoordinator: self.persistentStoreCoordinator];
 
         }];
     }
@@ -50,8 +50,12 @@
 - (void) saveBackgroundContext {
         [self.backgroundManagedObjectContext performBlockAndWait:^{
             NSError *error = nil;
-            BOOL saved = [self.backgroundManagedObjectContext save:&error];
-            if (!saved) {
+            //!!!!!!!!!!!!!!!!!!!
+            if (![self.backgroundManagedObjectContext save:&error]) {
+                // do some real error handling
+                NSLog(@"Could not save master context due to %@", error);
+            }
+            if (![self.managedObjectContext save:&error]) {
                 // do some real error handling
                 NSLog(@"Could not save master context due to %@", error);
             }
