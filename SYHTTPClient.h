@@ -16,4 +16,5 @@
 - (NSMutableURLRequest *)DELETERequestForClass:(NSString *)className forObjectWithId:(NSString *)objectId;
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *requestOpManager;
+
 @end
