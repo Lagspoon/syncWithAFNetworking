@@ -168,7 +168,6 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
                                                                                                                     {
                                                                                                                       if ([responseObject isKindOfClass:[NSDictionary class]])
                                                                                                                       {
-                                                                                                                          //NSLog(@"Response for %@: %@", className, responseObject);
                                                                                                                           //Write JSON files to disk
                                                                                                                           [self writeJSONResponse:responseObject toDiskForClassWithName:className];
                                                                                                                       }
