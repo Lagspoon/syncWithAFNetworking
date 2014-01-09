@@ -7,22 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SYAPIKey.h"
 
 @interface SYSyncEngine : NSObject
 
 + (SYSyncEngine *)sharedEngine;
 
-- (void) registerNSManagedObjectClassToSync:(Class)aClass;
+- (void) registerNSManagedObjectClassToSync:(Class)aClass withWebService:(webservice) webservice;
+
 - (void) startSync;
-//Parse.com date format is just a teeny bit different than NSDate —this small function make the necessary changes to date strings
-- (NSString *)dateStringForAPIUsingDate:(NSDate *)date;
+
 
 @property (atomic, readonly) BOOL syncInProgress;
 
-typedef enum {
-    SDObjectSynced = 0,
-    SDObjectCreated,
-    SDObjectDeleted,
-} SDObjectSyncStatus;
 
 @end

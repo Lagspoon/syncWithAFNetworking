@@ -7,7 +7,7 @@
 //
 
 #import "SYCoreDataStackWithSyncStuff.h"
-#import <CoreData/CoreData.h>
+
 @interface SYCoreDataStackWithSyncStuff()
 @property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
 @end

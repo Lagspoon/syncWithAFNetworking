@@ -14,5 +14,12 @@
     return nil;
 }
 
+#warning method to complete
+- (NSString *)dateStringForAPIUsingDate:(NSDate *)date {
+    NSString *string;
+
+    return string;
+}
+
 
 @end
