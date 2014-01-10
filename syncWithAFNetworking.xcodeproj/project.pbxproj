@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09057830186D9D480005308C /* SYKAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 0905782F186D9D480005308C /* SYKAPI.m */; };
 		094A0C461842B6CB0002D3AE /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 094A0C451842B6CB0002D3AE /* Drink.m */; };
 		094A0C491842D2C60002D3AE /* SYEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094A0C481842D2C60002D3AE /* SYEditTableViewController.m */; };
 		094AB598183F63B40019832B /* SYAddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 094AB597183F63B40019832B /* SYAddObject.m */; };
@@ -55,8 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0905782E186D9D480005308C /* SYKAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYKAPI.h; path = syncWithAFNetworking/SYKAPI.h; sourceTree = "<group>"; };
-		0905782F186D9D480005308C /* SYKAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYKAPI.m; path = syncWithAFNetworking/SYKAPI.m; sourceTree = "<group>"; };
 		094A0C441842B6CB0002D3AE /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drink.h; sourceTree = "<group>"; };
 		094A0C451842B6CB0002D3AE /* Drink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drink.m; sourceTree = "<group>"; };
 		094A0C471842D2C60002D3AE /* SYEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYEditTableViewController.h; sourceTree = "<group>"; };
@@ -172,8 +169,6 @@
 			children = (
 				097C0005183B64BA00F5FAFF /* SYCoreDataStackWithSyncStuff.h */,
 				097C0006183B64BA00F5FAFF /* SYCoreDataStackWithSyncStuff.m */,
-				0905782E186D9D480005308C /* SYKAPI.h */,
-				0905782F186D9D480005308C /* SYKAPI.m */,
 				097C0007183B64BA00F5FAFF /* SYHTTPClient.h */,
 				097C0008183B64BA00F5FAFF /* SYHTTPClient.m */,
 				097C0009183B64BA00F5FAFF /* SYSyncEngine.h */,
@@ -396,7 +391,6 @@
 				097C000F183B652A00F5FAFF /* SYTableViewController.m in Sources */,
 				097CFFFD183B5DD200F5FAFF /* AFNetworkReachabilityManager.m in Sources */,
 				097C000B183B64BA00F5FAFF /* SYCoreDataStackWithSyncStuff.m in Sources */,
-				09057830186D9D480005308C /* SYKAPI.m in Sources */,
 				097C0001183B5DD200F5FAFF /* AFURLResponseSerialization.m in Sources */,
 				094A0C491842D2C60002D3AE /* SYEditTableViewController.m in Sources */,
 				094A0C461842B6CB0002D3AE /* Drink.m in Sources */,
