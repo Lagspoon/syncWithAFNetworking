@@ -13,7 +13,6 @@
 		09057881186DDF310005308C /* SYSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 09057880186DDF310005308C /* SYSyncEngine.m */; };
 		09057886186DDF750005308C /* Drink+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 09057883186DDF750005308C /* Drink+JSON.m */; };
 		09057887186DDF750005308C /* NSManagedObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 09057885186DDF750005308C /* NSManagedObject+JSON.m */; };
-		090578B2186DE6D90005308C /* SYAPIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578B1186DE6D90005308C /* SYAPIKey.m */; };
 		090578C9186DE9210005308C /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578B7186DE9210005308C /* AFHTTPRequestOperation.m */; };
 		090578CA186DE9210005308C /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578B9186DE9210005308C /* AFHTTPRequestOperationManager.m */; };
 		090578CB186DE9210005308C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578BB186DE9210005308C /* AFHTTPSessionManager.m */; };
@@ -75,8 +74,6 @@
 		09057883186DDF750005308C /* Drink+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Drink+JSON.m"; path = "syncWithAFNetworking/Drink+JSON.m"; sourceTree = "<group>"; };
 		09057884186DDF750005308C /* NSManagedObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+JSON.h"; path = "syncWithAFNetworking/NSManagedObject+JSON.h"; sourceTree = "<group>"; };
 		09057885186DDF750005308C /* NSManagedObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+JSON.m"; path = "syncWithAFNetworking/NSManagedObject+JSON.m"; sourceTree = "<group>"; };
-		090578B0186DE6D90005308C /* SYAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYAPIKey.h; path = syncWithAFNetworking/SYAPIKey.h; sourceTree = "<group>"; };
-		090578B1186DE6D90005308C /* SYAPIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYAPIKey.m; path = syncWithAFNetworking/SYAPIKey.m; sourceTree = "<group>"; };
 		090578B6186DE9210005308C /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		090578B7186DE9210005308C /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		090578B8186DE9210005308C /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -237,8 +234,6 @@
 				09A1879F187AB79F000DE1E2 /* network */,
 				09A187A0187AB7BB000DE1E2 /* sync */,
 				09A187B0187C1E43000DE1E2 /* managedObject Category */,
-				090578B0186DE6D90005308C /* SYAPIKey.h */,
-				090578B1186DE6D90005308C /* SYAPIKey.m */,
 			);
 			name = syncEngine;
 			path = ..;
@@ -482,7 +477,6 @@
 				09A187971879AB89000DE1E2 /* SquareMenuAd.m in Sources */,
 				090578F5186F0ADB0005308C /* SYDetailTVC.m in Sources */,
 				094A0C491842D2C60002D3AE /* SYEditTableViewController.m in Sources */,
-				090578B2186DE6D90005308C /* SYAPIKey.m in Sources */,
 				09A187911879AB89000DE1E2 /* CategoryDrink.m in Sources */,
 				0905787F186DDEF20005308C /* SYHTTPClient.m in Sources */,
 				090578CB186DE9210005308C /* AFHTTPSessionManager.m in Sources */,
