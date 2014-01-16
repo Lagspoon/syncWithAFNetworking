@@ -75,7 +75,7 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
     [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:kSDSyncEngineInitialCompleteKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"kSDSyncEngineInitialCompleteKey" object:self];
-    NSLog(@"notification initial sync completed launch");
+    //NSLog(@"notification initial sync completed launch");
 }
 
 //When sync operations are completed we call this method to send a notification and change the flag syncInProgress
@@ -85,7 +85,6 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
         
         [self.backgroundManagedObjectContext performBlockAndWait:^{
             NSError *error = nil;
-            //!!!!!!!!!!!!!!!!!!!
             if (![self.backgroundManagedObjectContext save:&error]) {
                 // do some real error handling
                 NSLog(@"Could not save master context due to %@", error);
@@ -96,9 +95,8 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
             }
         }];
         
-#warning Don't forget to save the Managed Object Context used elsewhere for reading purpose
         [[NSNotificationCenter defaultCenter] postNotificationName:kSDSyncEngineSyncCompletedNotificationName object:nil];
-        NSLog(@"lauch the syncCompleted notification");
+        //NSLog(@"lauch the syncCompleted notification");
 
         [self willChangeValueForKey:@"syncInProgress"];
         _syncInProgress = NO;
@@ -182,7 +180,7 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
     
     NSArray * batchOperations = [AFURLConnectionOperation batchOfRequestOperations:operations progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations)
     {
-        NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
+        //NSLog(@"%lu of %lu complete", (unsigned long)numberOfFinishedOperations, (unsigned long)totalNumberOfOperations);
     } completionBlock:^(NSArray *operations)
     {
         NSLog(@"All operations in batch complete");
@@ -429,12 +427,7 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
                 NSLog(@"Unable to save context for class %@", className);
             }
         }];
-        
-        //
-        // You are now done with the downloaded JSON responses so you can delete them to clean up after yourself,
-        // then call your -executeSyncCompletedOperations to save off your master context and set the
-        // syncInProgress flag to NO
-        //
+
         [self deleteJSONDataRecordsForClassWithName:className];
     }
     [self downloadDataForRegisteredObjects:NO toDeleteLocalRecords:YES];
@@ -487,10 +480,9 @@ NSString * const kSDSyncEngineSyncCompletedNotificationName = @"SDSyncEngineSync
     // Execute the sync completion operations as this is now the final step of the sync process
     //
     
-    //[self executeSyncCompletedOperations];
-#warning I think that postLocalObjectsToServer could be called
+    [self executeSyncCompletedOperations];
     //[self postLocalObjectsToServer];
-    [self deleteObjectsOnServer];
+    //[self deleteObjectsOnServer];
 }
 
 - (void)postLocalObjectsToServer {

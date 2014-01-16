@@ -67,6 +67,7 @@
 		094AB59A18411A950019832B /* NSManagedObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+JSON.m"; sourceTree = "<group>"; };
 		094AB59F18411C750019832B /* Drink+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Drink+JSON.h"; sourceTree = "<group>"; };
 		094AB5A018411C750019832B /* Drink+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Drink+JSON.m"; sourceTree = "<group>"; };
+		09531677188000BF00B22699 /* SYAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYAPIKey.h; path = ../SYAPIKey.h; sourceTree = "<group>"; };
 		097C0003183B64BA00F5FAFF /* DBCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCoreDataStack.h; sourceTree = "<group>"; };
 		097C0004183B64BA00F5FAFF /* DBCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBCoreDataStack.m; sourceTree = "<group>"; };
 		097C0005183B64BA00F5FAFF /* SYCoreDataStackWithSyncStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCoreDataStackWithSyncStuff.h; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		097CFFA2183B5D1300F5FAFF = {
 			isa = PBXGroup;
 			children = (
+				09531677188000BF00B22699 /* SYAPIKey.h */,
 				09206900185A49A40079A625 /* interface */,
 				097C0013183B6B2A00F5FAFF /* Add from other project */,
 				097CFFB4183B5D1300F5FAFF /* syncWithAFNetworking */,

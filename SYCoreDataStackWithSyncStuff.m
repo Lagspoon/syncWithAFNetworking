@@ -36,7 +36,6 @@
         _backgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
         [_backgroundManagedObjectContext performBlockAndWait:^{
             [_backgroundManagedObjectContext setParentContext:self.managedObjectContext];
-            //[_backgroundManagedObjectContext setPersistentStoreCoordinator: self.persistentStoreCoordinator];
 
         }];
     }

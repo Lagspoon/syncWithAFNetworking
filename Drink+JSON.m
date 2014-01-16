@@ -13,7 +13,7 @@
 @implementation Drink (JSON)
 
 - (NSDictionary *)JSONToCreateObjectOnServer {
-#warning to complete
+
     /*NSDictionary *date = [NSDictionary dictionaryWithObjectsAndKeys:
                           @"Date", @"__type",
                           [[SYSyncEngine sharedEngine] dateStringForAPIUsingDate:self.date], @"iso" , nil];*/

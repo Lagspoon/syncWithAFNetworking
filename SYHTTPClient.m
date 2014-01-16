@@ -7,15 +7,13 @@
 //
 
 #import "SYHTTPClient.h"
-#import "DBKAPI.h"
+#import "SYAPIKey.h"
 
 @interface SYHTTPClient()
 
 
 @property (nonatomic, strong) AFHTTPRequestSerializer *requestSerializer;
-@property(nonatomic, strong) NSString *kAPIBaseURLString;
-@property(nonatomic, strong) NSString *kAPIApplicationId;
-@property(nonatomic, strong) NSString *kAPIRestKey;
+
 
 @end
 
@@ -26,23 +24,9 @@
 #pragma mark - LAZY INSTANTIATION
 ////////////////////////////////////////////////////
 
-- (NSString *) kAPIBaseURLString {
-    if (!_kAPIBaseURLString) _kAPIBaseURLString=[[DBKAPI alloc]init].kAPIBaseURLString;
-    return _kAPIBaseURLString;
-}
-
-- (NSString *) kAPIApplicationId {
-    if (!_kAPIApplicationId) _kAPIApplicationId=[[DBKAPI alloc]init].kAPIApplicationId;
-    return _kAPIApplicationId;
-}
-
-- (NSString *) kAPIRestKey {
-    if (!_kAPIRestKey) _kAPIRestKey=[[DBKAPI alloc]init].kAPIRestKey;
-    return _kAPIRestKey;
-}
 
 - (AFHTTPRequestOperationManager *) requestOpManager {
-if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]initWithBaseURL:[[NSURL alloc]initWithString:self.kAPIBaseURLString]];
+if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]initWithBaseURL:[[NSURL alloc]initWithString: parseAPIBaseURLString]];
     
     _requestOpManager.requestSerializer = [AFJSONRequestSerializer serializer];
     _requestOpManager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -52,8 +36,8 @@ if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]i
 
 - (AFHTTPRequestSerializer *) requestSerializer {
     if (!_requestSerializer) _requestSerializer = [AFJSONRequestSerializer serializer];
-    [_requestSerializer setValue:self.kAPIApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
-    [_requestSerializer setValue:self.kAPIRestKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+    [_requestSerializer setValue:parseAPIApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
+    [_requestSerializer setValue:parseAPIRestKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
     return _requestSerializer;
 }
 
@@ -76,7 +60,7 @@ if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]i
 ////////////////////////////////////////////////////
 - (NSMutableURLRequest *)GETRequestForClass:(NSString *)className parameters:(NSDictionary *)parameters {
     NSMutableURLRequest *request = nil;
-    NSMutableString *URL = [NSMutableString stringWithString:self.kAPIBaseURLString ];
+    NSMutableString *URL = [NSMutableString stringWithString:parseAPIBaseURLString ];
     [URL appendString:[NSString stringWithFormat:@"classes/%@", className]];
 
     request = [self.requestSerializer requestWithMethod:@"GET" URLString:URL parameters:parameters];
@@ -103,7 +87,7 @@ if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]i
 - (NSMutableURLRequest *)POSTRequestForClass:(NSString *)className parameters:(NSDictionary *)parameters {
     NSMutableURLRequest *request = nil;
     [self.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    NSMutableString *URL = [NSMutableString stringWithString:self.kAPIBaseURLString ];
+    NSMutableString *URL = [NSMutableString stringWithString:parseAPIBaseURLString ];
     [URL appendString:[NSString stringWithFormat:@"classes/%@", className]];
 
     request = [self.requestSerializer requestWithMethod:@"POST" URLString:URL parameters:parameters];
@@ -112,7 +96,7 @@ if(!_requestOpManager) _requestOpManager=[[AFHTTPRequestOperationManager alloc]i
 
 - (NSMutableURLRequest *)DELETERequestForClass:(NSString *)className forObjectWithId:(NSString *)objectId {
     NSMutableURLRequest *request = nil;
-    NSMutableString *URL = [NSMutableString stringWithString:self.kAPIBaseURLString ];
+    NSMutableString *URL = [NSMutableString stringWithString:parseAPIBaseURLString ];
     [URL appendString:[NSString stringWithFormat:@"classes/%@/%@", className,objectId]];
     request = [self.requestSerializer requestWithMethod:@"DELETE" URLString:URL parameters:nil];
     return request;
