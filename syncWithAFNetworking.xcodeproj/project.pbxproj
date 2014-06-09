@@ -23,6 +23,15 @@
 		090578D0186DE9210005308C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578C6186DE9210005308C /* AFURLResponseSerialization.m */; };
 		090578D1186DE9210005308C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578C8186DE9210005308C /* AFURLSessionManager.m */; };
 		090578F5186F0ADB0005308C /* SYDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578F4186F0ADB0005308C /* SYDetailTVC.m */; };
+		093F38891887DC3F00453E29 /* CategoryDrink.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F387A1887DC3F00453E29 /* CategoryDrink.m */; };
+		093F388A1887DC3F00453E29 /* DBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F387C1887DC3F00453E29 /* DBAppDelegate.m */; };
+		093F388B1887DC3F00453E29 /* DBCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F387E1887DC3F00453E29 /* DBCoreDataStack.m */; };
+		093F388C1887DC3F00453E29 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F38801887DC3F00453E29 /* Drink.m */; };
+		093F388D1887DC3F00453E29 /* Identity.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F38821887DC3F00453E29 /* Identity.m */; };
+		093F388E1887DC3F00453E29 /* menuCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 093F38831887DC3F00453E29 /* menuCoreDataModel.xcdatamodeld */; };
+		093F388F1887DC3F00453E29 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F38861887DC3F00453E29 /* Photo.m */; };
+		093F38901887DC3F00453E29 /* SquareMenuAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F38881887DC3F00453E29 /* SquareMenuAd.m */; };
+		093F38941887DCD300453E29 /* SYAPIKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 093F38931887DCD300453E29 /* SYAPIKey.m */; };
 		094A0C491842D2C60002D3AE /* SYEditTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094A0C481842D2C60002D3AE /* SYEditTableViewController.m */; };
 		097C000F183B652A00F5FAFF /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097C000E183B652A00F5FAFF /* SYTableViewController.m */; };
 		097CFFAF183B5D1300F5FAFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFAE183B5D1300F5FAFF /* Foundation.framework */; };
@@ -39,13 +48,6 @@
 		097CFFD3183B5D1300F5FAFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFB2183B5D1300F5FAFF /* UIKit.framework */; };
 		097CFFDB183B5D1300F5FAFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 097CFFD9183B5D1300F5FAFF /* InfoPlist.strings */; };
 		097CFFDD183B5D1300F5FAFF /* syncWithAFNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CFFDC183B5D1300F5FAFF /* syncWithAFNetworkingTests.m */; };
-		09A187911879AB89000DE1E2 /* CategoryDrink.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187841879AB89000DE1E2 /* CategoryDrink.m */; };
-		09A187921879AB89000DE1E2 /* DBCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187861879AB89000DE1E2 /* DBCoreDataStack.m */; };
-		09A187931879AB89000DE1E2 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187881879AB89000DE1E2 /* Drink.m */; };
-		09A187941879AB89000DE1E2 /* Identity.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A1878A1879AB89000DE1E2 /* Identity.m */; };
-		09A187951879AB89000DE1E2 /* menuCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09A1878B1879AB89000DE1E2 /* menuCoreDataModel.xcdatamodeld */; };
-		09A187971879AB89000DE1E2 /* SquareMenuAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187901879AB89000DE1E2 /* SquareMenuAd.m */; };
-		09A1879A1879AD92000DE1E2 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187991879AD92000DE1E2 /* Photo.m */; };
 		09A187A6187AB8C7000DE1E2 /* SYSyncFileManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187A5187AB8C7000DE1E2 /* SYSyncFileManagement.m */; };
 		09A187A9187AC36B000DE1E2 /* SYSyncDataManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187A8187AC36B000DE1E2 /* SYSyncDataManagement.m */; };
 		09A187AF187C02E3000DE1E2 /* SYSyncForParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A187AE187C02E3000DE1E2 /* SYSyncForParse.m */; };
@@ -95,6 +97,23 @@
 		090578C8186DE9210005308C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		090578F3186F0ADB0005308C /* SYDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDetailTVC.h; sourceTree = "<group>"; };
 		090578F4186F0ADB0005308C /* SYDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDetailTVC.m; sourceTree = "<group>"; };
+		093F38791887DC3F00453E29 /* CategoryDrink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDrink.h; path = "../check out/coreDataStack/coreDataStack/CategoryDrink.h"; sourceTree = "<group>"; };
+		093F387A1887DC3F00453E29 /* CategoryDrink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDrink.m; path = "../check out/coreDataStack/coreDataStack/CategoryDrink.m"; sourceTree = "<group>"; };
+		093F387B1887DC3F00453E29 /* DBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBAppDelegate.h; path = "../check out/coreDataStack/coreDataStack/DBAppDelegate.h"; sourceTree = "<group>"; };
+		093F387C1887DC3F00453E29 /* DBAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBAppDelegate.m; path = "../check out/coreDataStack/coreDataStack/DBAppDelegate.m"; sourceTree = "<group>"; };
+		093F387D1887DC3F00453E29 /* DBCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBCoreDataStack.h; path = "../check out/coreDataStack/coreDataStack/DBCoreDataStack.h"; sourceTree = "<group>"; };
+		093F387E1887DC3F00453E29 /* DBCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBCoreDataStack.m; path = "../check out/coreDataStack/coreDataStack/DBCoreDataStack.m"; sourceTree = "<group>"; };
+		093F387F1887DC3F00453E29 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drink.h; path = "../check out/coreDataStack/coreDataStack/Drink.h"; sourceTree = "<group>"; };
+		093F38801887DC3F00453E29 /* Drink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Drink.m; path = "../check out/coreDataStack/coreDataStack/Drink.m"; sourceTree = "<group>"; };
+		093F38811887DC3F00453E29 /* Identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Identity.h; path = "../check out/coreDataStack/coreDataStack/Identity.h"; sourceTree = "<group>"; };
+		093F38821887DC3F00453E29 /* Identity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Identity.m; path = "../check out/coreDataStack/coreDataStack/Identity.m"; sourceTree = "<group>"; };
+		093F38841887DC3F00453E29 /* menuCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = menuCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		093F38851887DC3F00453E29 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = "../check out/coreDataStack/coreDataStack/Photo.h"; sourceTree = "<group>"; };
+		093F38861887DC3F00453E29 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = "../check out/coreDataStack/coreDataStack/Photo.m"; sourceTree = "<group>"; };
+		093F38871887DC3F00453E29 /* SquareMenuAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareMenuAd.h; path = "../check out/coreDataStack/coreDataStack/SquareMenuAd.h"; sourceTree = "<group>"; };
+		093F38881887DC3F00453E29 /* SquareMenuAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SquareMenuAd.m; path = "../check out/coreDataStack/coreDataStack/SquareMenuAd.m"; sourceTree = "<group>"; };
+		093F38921887DC7C00453E29 /* SYAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYAPIKey.h; path = ../../../SYAPIKey.h; sourceTree = "<group>"; };
+		093F38931887DCD300453E29 /* SYAPIKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYAPIKey.m; path = ../../../SYAPIKey.m; sourceTree = "<group>"; };
 		094A0C471842D2C60002D3AE /* SYEditTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYEditTableViewController.h; sourceTree = "<group>"; };
 		094A0C481842D2C60002D3AE /* SYEditTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYEditTableViewController.m; sourceTree = "<group>"; };
 		097C000D183B652A00F5FAFF /* SYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTableViewController.h; sourceTree = "<group>"; };
@@ -117,19 +136,6 @@
 		097CFFD8183B5D1300F5FAFF /* syncWithAFNetworkingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "syncWithAFNetworkingTests-Info.plist"; sourceTree = "<group>"; };
 		097CFFDA183B5D1300F5FAFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		097CFFDC183B5D1300F5FAFF /* syncWithAFNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = syncWithAFNetworkingTests.m; sourceTree = "<group>"; };
-		09A187831879AB89000DE1E2 /* CategoryDrink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CategoryDrink.h; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/CategoryDrink.h; sourceTree = "<group>"; };
-		09A187841879AB89000DE1E2 /* CategoryDrink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CategoryDrink.m; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/CategoryDrink.m; sourceTree = "<group>"; };
-		09A187851879AB89000DE1E2 /* DBCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBCoreDataStack.h; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/DBCoreDataStack.h; sourceTree = "<group>"; };
-		09A187861879AB89000DE1E2 /* DBCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBCoreDataStack.m; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/DBCoreDataStack.m; sourceTree = "<group>"; };
-		09A187871879AB89000DE1E2 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Drink.h; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/Drink.h; sourceTree = "<group>"; };
-		09A187881879AB89000DE1E2 /* Drink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Drink.m; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/Drink.m; sourceTree = "<group>"; };
-		09A187891879AB89000DE1E2 /* Identity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Identity.h; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/Identity.h; sourceTree = "<group>"; };
-		09A1878A1879AB89000DE1E2 /* Identity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Identity.m; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/Identity.m; sourceTree = "<group>"; };
-		09A1878C1879AB89000DE1E2 /* menuCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = menuCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
-		09A1878F1879AB89000DE1E2 /* SquareMenuAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SquareMenuAd.h; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/SquareMenuAd.h; sourceTree = "<group>"; };
-		09A187901879AB89000DE1E2 /* SquareMenuAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SquareMenuAd.m; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/SquareMenuAd.m; sourceTree = "<group>"; };
-		09A187981879AD92000DE1E2 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Photo.h; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/Photo.h; sourceTree = "<group>"; };
-		09A187991879AD92000DE1E2 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Photo.m; path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/Photo.m; sourceTree = "<group>"; };
 		09A187A4187AB8C7000DE1E2 /* SYSyncFileManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYSyncFileManagement.h; path = syncWithAFNetworking/SYSyncFileManagement.h; sourceTree = "<group>"; };
 		09A187A5187AB8C7000DE1E2 /* SYSyncFileManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYSyncFileManagement.m; path = syncWithAFNetworking/SYSyncFileManagement.m; sourceTree = "<group>"; };
 		09A187A7187AC36B000DE1E2 /* SYSyncDataManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYSyncDataManagement.h; path = syncWithAFNetworking/SYSyncDataManagement.h; sourceTree = "<group>"; };
@@ -207,22 +213,32 @@
 			path = syncWithAFNetworking;
 			sourceTree = "<group>";
 		};
+		093F38911887DC4900453E29 /* coreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				093F38791887DC3F00453E29 /* CategoryDrink.h */,
+				093F387A1887DC3F00453E29 /* CategoryDrink.m */,
+				093F387B1887DC3F00453E29 /* DBAppDelegate.h */,
+				093F387C1887DC3F00453E29 /* DBAppDelegate.m */,
+				093F387D1887DC3F00453E29 /* DBCoreDataStack.h */,
+				093F387E1887DC3F00453E29 /* DBCoreDataStack.m */,
+				093F387F1887DC3F00453E29 /* Drink.h */,
+				093F38801887DC3F00453E29 /* Drink.m */,
+				093F38811887DC3F00453E29 /* Identity.h */,
+				093F38821887DC3F00453E29 /* Identity.m */,
+				093F38831887DC3F00453E29 /* menuCoreDataModel.xcdatamodeld */,
+				093F38851887DC3F00453E29 /* Photo.h */,
+				093F38861887DC3F00453E29 /* Photo.m */,
+				093F38871887DC3F00453E29 /* SquareMenuAd.h */,
+				093F38881887DC3F00453E29 /* SquareMenuAd.m */,
+			);
+			name = coreDataStack;
+			sourceTree = "<group>";
+		};
 		097C0013183B6B2A00F5FAFF /* Add from other project */ = {
 			isa = PBXGroup;
 			children = (
-				09A1878B1879AB89000DE1E2 /* menuCoreDataModel.xcdatamodeld */,
-				09A187981879AD92000DE1E2 /* Photo.h */,
-				09A187991879AD92000DE1E2 /* Photo.m */,
-				09A187831879AB89000DE1E2 /* CategoryDrink.h */,
-				09A187841879AB89000DE1E2 /* CategoryDrink.m */,
-				09A187851879AB89000DE1E2 /* DBCoreDataStack.h */,
-				09A187861879AB89000DE1E2 /* DBCoreDataStack.m */,
-				09A187871879AB89000DE1E2 /* Drink.h */,
-				09A187881879AB89000DE1E2 /* Drink.m */,
-				09A187891879AB89000DE1E2 /* Identity.h */,
-				09A1878A1879AB89000DE1E2 /* Identity.m */,
-				09A1878F1879AB89000DE1E2 /* SquareMenuAd.h */,
-				09A187901879AB89000DE1E2 /* SquareMenuAd.m */,
+				093F38911887DC4900453E29 /* coreDataStack */,
 			);
 			name = "Add from other project";
 			sourceTree = "<group>";
@@ -242,6 +258,8 @@
 		097CFFA2183B5D1300F5FAFF = {
 			isa = PBXGroup;
 			children = (
+				093F38921887DC7C00453E29 /* SYAPIKey.h */,
+				093F38931887DCD300453E29 /* SYAPIKey.m */,
 				09206900185A49A40079A625 /* interface */,
 				097C0013183B6B2A00F5FAFF /* Add from other project */,
 				097CFFB4183B5D1300F5FAFF /* syncWithAFNetworking */,
@@ -465,34 +483,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09A1879A1879AD92000DE1E2 /* Photo.m in Sources */,
 				09057886186DDF750005308C /* Drink+JSON.m in Sources */,
 				09057887186DDF750005308C /* NSManagedObject+JSON.m in Sources */,
 				090578CD186DE9210005308C /* AFSecurityPolicy.m in Sources */,
 				09A187A6187AB8C7000DE1E2 /* SYSyncFileManagement.m in Sources */,
 				090578CA186DE9210005308C /* AFHTTPRequestOperationManager.m in Sources */,
+				093F388A1887DC3F00453E29 /* DBAppDelegate.m in Sources */,
 				090578C9186DE9210005308C /* AFHTTPRequestOperation.m in Sources */,
 				097C000F183B652A00F5FAFF /* SYTableViewController.m in Sources */,
 				0905787D186DDEF20005308C /* SYAddObject.m in Sources */,
-				09A187971879AB89000DE1E2 /* SquareMenuAd.m in Sources */,
+				093F38891887DC3F00453E29 /* CategoryDrink.m in Sources */,
 				090578F5186F0ADB0005308C /* SYDetailTVC.m in Sources */,
+				093F388D1887DC3F00453E29 /* Identity.m in Sources */,
+				093F388E1887DC3F00453E29 /* menuCoreDataModel.xcdatamodeld in Sources */,
 				094A0C491842D2C60002D3AE /* SYEditTableViewController.m in Sources */,
-				09A187911879AB89000DE1E2 /* CategoryDrink.m in Sources */,
 				0905787F186DDEF20005308C /* SYHTTPClient.m in Sources */,
 				090578CB186DE9210005308C /* AFHTTPSessionManager.m in Sources */,
+				093F38901887DC3F00453E29 /* SquareMenuAd.m in Sources */,
 				09A187A9187AC36B000DE1E2 /* SYSyncDataManagement.m in Sources */,
+				093F388C1887DC3F00453E29 /* Drink.m in Sources */,
+				093F388F1887DC3F00453E29 /* Photo.m in Sources */,
+				093F38941887DCD300453E29 /* SYAPIKey.m in Sources */,
+				093F388B1887DC3F00453E29 /* DBCoreDataStack.m in Sources */,
 				09057881186DDF310005308C /* SYSyncEngine.m in Sources */,
 				090578CE186DE9210005308C /* AFURLConnectionOperation.m in Sources */,
 				090578CF186DE9210005308C /* AFURLRequestSerialization.m in Sources */,
-				09A187921879AB89000DE1E2 /* DBCoreDataStack.m in Sources */,
 				090578D1186DE9210005308C /* AFURLSessionManager.m in Sources */,
 				09A187AF187C02E3000DE1E2 /* SYSyncForParse.m in Sources */,
-				09A187931879AB89000DE1E2 /* Drink.m in Sources */,
-				09A187951879AB89000DE1E2 /* menuCoreDataModel.xcdatamodeld in Sources */,
 				090578D0186DE9210005308C /* AFURLResponseSerialization.m in Sources */,
 				097CFFBF183B5D1300F5FAFF /* SYAppDelegate.m in Sources */,
 				097CFFBB183B5D1300F5FAFF /* main.m in Sources */,
-				09A187941879AB89000DE1E2 /* Identity.m in Sources */,
 				0905787E186DDEF20005308C /* SYCoreDataStackWithSyncStuff.m in Sources */,
 				090578CC186DE9210005308C /* AFNetworkReachabilityManager.m in Sources */,
 			);
@@ -727,14 +747,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		09A1878B1879AB89000DE1E2 /* menuCoreDataModel.xcdatamodeld */ = {
+		093F38831887DC3F00453E29 /* menuCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				09A1878C1879AB89000DE1E2 /* menuCoreDataModel.xcdatamodel */,
+				093F38841887DC3F00453E29 /* menuCoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 09A1878C1879AB89000DE1E2 /* menuCoreDataModel.xcdatamodel */;
+			currentVersion = 093F38841887DC3F00453E29 /* menuCoreDataModel.xcdatamodel */;
 			name = menuCoreDataModel.xcdatamodeld;
-			path = ../../../coreDataStack/iOS/makeMyMouthWater/coreDataStack/menuCoreDataModel.xcdatamodeld;
+			path = "../check out/coreDataStack/coreDataStack/menuCoreDataModel.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

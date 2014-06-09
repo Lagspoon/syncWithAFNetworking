@@ -13,6 +13,7 @@
 #import "SYSyncForParse.h" //specific data modification for Parse REST API
 #import "AFHTTPRequestOperation.h"
 #import "SYHTTPClient.h"
+#import "SYSyncEngine.h"
 
 @interface SYSyncDataManagement()
 
@@ -87,6 +88,8 @@
                 [[[SYSyncForParse alloc]init] setValue:obj forKey:key forManagedObject:managedObject];
                 break;
             case flickr:
+                [[[SYSyncEngine alloc]init] setValue:obj forKey:key forManagedObject:managedObject];
+
 #warning complete with flickr specific
                 break;
             default:
@@ -142,16 +145,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)processJSONDataRecordsIntoCoreData:(webservice)webservice initialSyncComplete:(BOOL)initialSyncComplete registeredClassesToSync:(NSArray *)registeredClassesToSync {
     NSManagedObjectContext *managedObjectContext = self.backgroundManagedObjectContext;
-    //
+
     // Iterate over all registered classes to sync
-    //
-    for (NSDictionary *dicionary in registeredClassesToSync) {
-        NSString *className = [dicionary valueForKey:@"className"];
+    for (NSDictionary *dictionary in registeredClassesToSync) {
+        NSString *className = [dictionary valueForKey:@"className"];
+
         if (!initialSyncComplete) { // import all downloaded data to Core Data for initial sync
-            //
             // If this is the initial sync then the logic is pretty simple, you will fetch the JSON data from disk
             // for the class of the current iteration and create new NSManagedObjects for each record
-            //
             NSDictionary *JSONDictionary = [self JSONDictionaryForClassWithName:className];
 
             switch (webservice) {
@@ -166,51 +167,22 @@
 
                 case flickr:
                 {
+
                     NSArray *records = [[JSONDictionary objectForKey:@"photoset"] objectForKey:@"photo"];
-                    NSMutableArray * operations = [[NSMutableArray alloc]init];
                     for (NSDictionary *record in records) {
-                        NSMutableURLRequest *request =[[SYHTTPClient sharedClientFor:flickr] flickrGETPhotoWithFarmId:[record valueForKey:@"farm"] serverId:[record valueForKey:@"server"] photoId:[record valueForKey:@"id"] secret:[record valueForKey:@"secret"] size:@"o"];
-                        AFHTTPRequestOperation *operation = [[SYHTTPClient sharedClientFor:flickr].requestOpManager HTTPRequestOperationWithRequest:request
-                                                                                                                                            success:^(AFHTTPRequestOperation *operation, id responseObject)
-                                                             {
-                                                                 NSDictionary * recordThatMatchDataModel = @{@"image": responseObject , };
-
-                                                                 [self newManagedObjectWithClassName:className forRecord:recordThatMatchDataModel fromWebService:flickr];
-
-
-                                                             }
-                                                                                                                                            failure:^(AFHTTPRequestOperation *operation, NSError *error)
-                                                             {
-                                                                 NSLog(@"%@",operation.responseString);
-                                                                 NSLog(@"Request for class %@ failed with error: %@", className, error);
-                                                             }];
-                        [operations addObject:operation];
+                        [[SYHTTPClient sharedClientFor:webservice] downloadPhotoFromFlickr: record];
+                        [self newManagedObjectWithClassName:className forRecord:record fromWebService:webservice];
                     }
-
-                    NSArray * batchOperations = [AFURLConnectionOperation batchOfRequestOperations:operations
-                                                                                     progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations)
-                                                 {
-                                                     NSLog(@"%d of %d complete", numberOfFinishedOperations, totalNumberOfOperations);
-                                                 }
-                                                                                   completionBlock:^(NSArray *operations)
-                                                 {
-                                                     NSLog(@"All operations in batch complete");
-                                                 }];
-
-                    [[NSOperationQueue mainQueue] addOperations:batchOperations waitUntilFinished:NO];
                 }
 
                 default:
                     break;
             }
-
         }
         else {
-            //
             // Otherwise you need to do some more logic to determine if the record is new or has been updated.
             // First get the downloaded records from the JSON response, verify there is at least one object in
             // the data, and then fetch all records stored in Core Data whose objectId matches those from the JSON response.
-            //
             NSArray *downloadedRecords = [self JSONDataRecordsForClass:className sortedByKey:@"objectId"];
             if ([downloadedRecords lastObject]) {
                 //

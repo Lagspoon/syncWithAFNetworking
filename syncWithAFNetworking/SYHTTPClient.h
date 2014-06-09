@@ -17,9 +17,12 @@
 + (SYHTTPClient *)sharedClientFor:(webservice)webservice;
 @property (nonatomic, strong) AFHTTPRequestOperationManager *requestOpManager;
 
+
+- (BOOL) downloadDataForClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate;
+
 //GENERIC REQUEST
-- (NSMutableURLRequest *)GETRequestForClass:(NSString *)className withWebService:(webservice)webservice parameters:(NSDictionary *)parameters;
-- (NSMutableURLRequest *)GETRequestForAllRecordsOfClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate;
+//- (NSMutableURLRequest *)GETRequestForClass:(NSString *)className withWebService:(webservice)webservice parameters:(NSDictionary *)parameters;
+//- (NSMutableURLRequest *)GETRequestForAllRecordsOfClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate;
 
 //PARSE REQUEST
 - (NSMutableURLRequest *)parsePOSTRequestForClass:(NSString *)className parameters:(NSDictionary *)parameters;
@@ -29,6 +32,6 @@
 //FLICKR REQUEST
 - (NSMutableURLRequest *) flickrGETRequest:(NSString *) method parameters:(NSDictionary *)parameters;
 - (NSMutableURLRequest *) flickrGETPhotoWithFarmId:(NSString *)farmId  serverId:(NSString *)serverId photoId:(NSString *)photoId secret:(NSString *)secret size:(NSString *)size;
-
+- (UIImage *) downloadPhotoFromFlickr:(NSDictionary *)record;
 
 @end

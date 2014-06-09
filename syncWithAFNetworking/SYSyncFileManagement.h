@@ -12,6 +12,6 @@
 
 
 - (NSURL *)JSONDataRecordsDirectory;
-- (void)writeJSONResponse:(id)response toDiskForClassWithName:(NSString *)className;
+- (BOOL)writeJSONResponse:(id)response toDiskForClassWithName:(NSString *)className;
 
 @end

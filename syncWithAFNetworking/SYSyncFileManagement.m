@@ -34,9 +34,11 @@
 }
 
 
-- (void)writeJSONResponse:(id)response toDiskForClassWithName:(NSString *)className {
+- (BOOL)writeJSONResponse:(id)response toDiskForClassWithName:(NSString *)className {
     NSURL *fileURL = [NSURL URLWithString:className relativeToURL:[self JSONDataRecordsDirectory]];
-    if (![(NSDictionary *)response writeToFile:[fileURL path] atomically:YES]) {
+    if ([(NSDictionary *)response writeToFile:[fileURL path] atomically:YES]) {
+        return YES;
+    }else {
         NSLog(@"Error saving response to disk, will attempt to remove NSNull values and try again.");
         // remove NSNulls and try again...
         NSArray *records = [response objectForKey:@"results"];
@@ -53,8 +55,11 @@
 
         NSDictionary *nullFreeDictionary = [NSDictionary dictionaryWithObject:nullFreeRecords forKey:@"results"];
 
-        if (![nullFreeDictionary writeToFile:[fileURL path] atomically:YES]) {
+        if ([nullFreeDictionary writeToFile:[fileURL path] atomically:YES]) {
+            return YES;
+        } else {
             NSLog(@"Failed all attempts to save response to disk: %@", response);
+            return NO;
         }
     }
 }

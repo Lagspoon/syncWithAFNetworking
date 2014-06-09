@@ -7,6 +7,7 @@
 //
 
 #import "SYHTTPClient.h"
+#import "SYSyncFileManagement.h"
 
 
 @interface SYHTTPClient()
@@ -15,11 +16,19 @@
 @property (nonatomic, strong) AFHTTPResponseSerializer *responseSerializer;
 @property (nonatomic, weak) NSDictionary *webServiceInfo;
 @property (nonatomic, strong) NSString *baseURLString;
+@property (nonatomic, strong) SYSyncFileManagement *fileManagement; //used to deal with file manipulation
+
 @end
 
 @implementation SYHTTPClient
 
 
+
+
+- (SYSyncFileManagement *) fileManagement {
+    if (!_fileManagement) _fileManagement = [[SYSyncFileManagement alloc]init];
+    return _fileManagement;
+}
 ////////////////////////////////////////////////////
 //CLASS INSTANTIATION
 #pragma mark - CLASS INSTANTIATION
@@ -73,56 +82,69 @@
 //GENERIC REQUEST CREATION
 #pragma mark - GENERIC REQUEST CREATION
 ////////////////////////////////////////////////////
-- (NSMutableURLRequest *)GETRequestForAllRecordsOfClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate {
+- (BOOL) downloadDataForClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate {
+    __block BOOL success;
+    NSMutableString *URL = [NSMutableString stringWithString:self.baseURLString];
+    NSMutableURLRequest *request;
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc]init];
-    if (updatedDate) {
-        switch (webservice) {
+    NSMutableArray *operations = [NSMutableArray array];
 
-            case parse:
-            {
-                if (updatedDate) {
+    switch (webservice) {
+
+        case parse:
+        {
+            if (updatedDate) {
                 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
                 [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.'999Z'"];
                 [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
                 NSString *jsonString = [NSString stringWithFormat:@"{\"updatedAt\":{\"$gte\":{\"__type\":\"Date\",\"iso\":\"%@\"}}}",[dateFormatter stringFromDate:updatedDate]];
                 parameters = [NSMutableDictionary dictionaryWithObject:jsonString forKey:@"where"];
-                }
-
             }
-                break;
-            case flickr:
-            {
-
-
-
-#warning no updatedAfterDate predicate implemented
-
-            }
-            default:
-                break;
-        }
-    }
-    return [self GETRequestForClass:className withWebService:webservice parameters:parameters];
-}
-
-- (NSMutableURLRequest *)GETRequestForClass:(NSString *)className withWebService:(webservice)webservice parameters:(NSMutableDictionary *)parameters {
-    NSMutableString *URL = [NSMutableString stringWithString:self.baseURLString];
-
-    switch (webservice) {
-        case parse: //parse webservice
             [URL appendString:[NSString stringWithFormat:@"classes/%@", className]];
-            break;
-        case flickr: //flickr
-        {
-
+            request = [self.requestSerializer requestWithMethod:@"GET" URLString:URL parameters:parameters];
         }
             break;
+        case flickr:
+        {
+            request = [self flickrGETPhotosFromPhotoset:flickrPhotosetClub1810];
+#warning no updatedAfterDate predicate implemented
+        }
         default:
             break;
     }
-    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:URL parameters:parameters];
 
-    return request;
+    AFHTTPRequestOperation *operation = [self.requestOpManager HTTPRequestOperationWithRequest:request
+                                                                                             success:(BOOL)^(AFHTTPRequestOperation *operation, id responseObject)
+                                         {
+                                             if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                                                 //Write JSON files to disk
+                                                 if ([self.fileManagement writeJSONResponse:responseObject toDiskForClassWithName:className]) {
+                                                     return YES;
+                                                 };
+                                             } else {
+                                                 return NO;
+                                             }
+                                         }
+                                                                                             failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                                         {
+                                             NSLog(@"Operation responseString : %@", operation.responseString);
+                                             NSLog(@"Request for class %@ failed with error: %@", className, error);
+                                         }];
+
+    [operations addObject:operation];
+
+    NSArray * batchOperations = [AFURLConnectionOperation batchOfRequestOperations:operations
+                                                                     progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations)
+                                 {
+                                     NSLog(@"%d of %d complete", numberOfFinishedOperations, totalNumberOfOperations);
+                                 }
+                                                                   completionBlock:^(NSArray *operations)
+                                 {
+                                     NSLog(@"All operations in batch complete");
+                                 }];
+    
+    [[NSOperationQueue mainQueue] addOperations:batchOperations waitUntilFinished:YES];
+
 }
 
 
@@ -155,6 +177,24 @@
 //FLICKR REQUEST CREATION
 #pragma mark - FLICKR REQUEST CREATION
 ////////////////////////////////////////////////////
+
+- (UIImage *) downloadPhotoFromFlickr:(NSDictionary *)record {
+
+    __block UIImage * photo;
+    NSMutableURLRequest *request =[self flickrGETPhotoWithFarmId:[record valueForKey:@"farm"] serverId:[record valueForKey:@"server"] photoId:[record valueForKey:@"id"] secret:[record valueForKey:@"secret"] size:@"o"];
+    AFHTTPRequestOperation *operation = [[SYHTTPClient sharedClientFor:flickr].requestOpManager HTTPRequestOperationWithRequest:request
+                                                                                                                            success:^(AFHTTPRequestOperation *operation, id responseObject)
+                                             {
+                                                 photo = [UIImage imageWithData:(NSData *)responseObject];
+                                             }
+                                                                                                                            failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                                             {
+                                                 NSLog(@"%@",operation.responseString);
+                                                 NSLog(@"Request downloadPhotosFromFlickr failed with error: %@", error);
+                                             }];
+    return photo;
+}
+
 - (NSMutableURLRequest *) flickrGETPhotoWithFarmId:(NSString *)farmId  serverId:(NSString *)serverId photoId:(NSString *)photoId secret:(NSString *)secret size:(NSString *)size {
     NSMutableString *URL = [NSMutableString stringWithFormat:@"http://farm%@.staticflickr.com/%@/%@_%@_%@.jpg",farmId,serverId,photoId,secret,size];
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET" URLString:URL parameters:nil];

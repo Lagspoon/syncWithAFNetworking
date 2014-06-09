@@ -13,7 +13,6 @@
 #import "AFHTTPRequestOperation.h"
 
 #import "SYHTTPClient.h"
-#import "SYSyncFileManagement.h"
 #import "SYSyncDataManagement.h"
 
 
@@ -23,10 +22,9 @@ NSString * const SYSyncCompleted = @"SYSyncCompleted";
 
 @interface SYSyncEngine()
 
-//this array contains all the entity to sync and the webservice it is linked. Couple Entity/Webservice is made by a NSDictionary with keys (className, webService)
+//this array contains all the entity to sync and the webservice it is linked with. Couple Entity/Webservice is made by a NSDictionary with keys (className, webService)
 @property (nonatomic, strong) NSMutableArray *registeredClassesToSync;
 @property (nonatomic, strong) NSManagedObjectContext *backgroundManagedObjectContext;
-@property (nonatomic, strong) SYSyncFileManagement *fileManagement; //used to deal with file manipulation
 @property (nonatomic, strong) SYSyncDataManagement *dataManagement; //used to transform data receive from webservice
 
 @end
@@ -48,10 +46,7 @@ NSString * const SYSyncCompleted = @"SYSyncCompleted";
     return _registeredClassesToSync;
 }
 
-- (SYSyncFileManagement *) fileManagement {
-    if (!_fileManagement) _fileManagement = [[SYSyncFileManagement alloc]init];
-    return _fileManagement;
-}
+
 - (SYSyncDataManagement *) dataManagement {
     if (!_dataManagement) _dataManagement = [[SYSyncDataManagement alloc]init];
     return _dataManagement;
@@ -169,8 +164,8 @@ NSString * const SYSyncCompleted = @"SYSyncCompleted";
 
 //this is the first method of the sync process : we download JSON record from webservices for object that are registered
 - (void)downloadDataForRegisteredObjects:(BOOL)useUpdatedAtDate toDeleteLocalRecords:(BOOL)toDelete {
-    NSMutableArray *operations = [NSMutableArray array];
     webservice webservice;
+
     for (NSDictionary *Class2Sync in self.registeredClassesToSync)
     {
         NSString *className = [Class2Sync valueForKey:@"className"];
@@ -181,42 +176,22 @@ NSString * const SYSyncCompleted = @"SYSyncCompleted";
         {
             mostRecentUpdatedDate = [self mostRecentUpdatedAtDateForEntityWithName:className];
         }
-        SYHTTPClient *httpClient = [SYHTTPClient sharedClientFor:webservice];
-        NSMutableURLRequest *request = [httpClient GETRequestForAllRecordsOfClass:className withWebService:webservice updatedAfterDate:mostRecentUpdatedDate];
-        AFHTTPRequestOperation *operation = [httpClient.requestOpManager HTTPRequestOperationWithRequest:request
-                                                                                                 success:^(AFHTTPRequestOperation *operation, id responseObject)
-                                             {
-                                                 if ([responseObject isKindOfClass:[NSDictionary class]])
-                                                 {
-                                                     //Write JSON files to disk
-                                                     [self.fileManagement writeJSONResponse:responseObject toDiskForClassWithName:className];
-                                                 }
-                                             }
-                                                                                                 failure:^(AFHTTPRequestOperation *operation, NSError *error)
-                                             {
-                                                 NSLog(@"Operation responseString : %@", operation.responseString);
-                                                 NSLog(@"Request for class %@ failed with error: %@", className, error);
-                                             }];
 
-        [operations addObject:operation];
+
+        dispatch_queue_t SyncQueue = dispatch_queue_create("sync", NULL);
+        dispatch_async(SyncQueue, ^{
+
+            SYHTTPClient *httpClient = [SYHTTPClient sharedClientFor:webservice];
+            [httpClient downloadDataForClass:className withWebService:webservice updatedAfterDate: mostRecentUpdatedDate];
+            // Process JSON records into Core Data
+            [self.dataManagement processJSONDataRecordsIntoCoreData:webservice initialSyncComplete:[self initialSyncComplete] registeredClassesToSync:self.registeredClassesToSync];
+            if (toDelete) {
+                [self.dataManagement processJSONDataRecordsForDeletion:webservice registeredClassesToSync:self.registeredClassesToSync];
+            }
+            [self executeSyncCompletedOperations];
+
+        });
     }
-
-    NSArray * batchOperations = [AFURLConnectionOperation batchOfRequestOperations:operations
-                                                                     progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations)
-                                                                                    {
-                                                                                        NSLog(@"%d of %d complete", numberOfFinishedOperations, totalNumberOfOperations);
-                                                                                    }
-                                                                   completionBlock:^(NSArray *operations)
-                                                                                    {
-                                                                                        NSLog(@"All operations in batch complete");
-                                                                                        // Process JSON records into Core Data
-                                                                                        [self.dataManagement processJSONDataRecordsIntoCoreData:webservice initialSyncComplete:[self initialSyncComplete] registeredClassesToSync:self.registeredClassesToSync];
-                                                                                        [self.dataManagement processJSONDataRecordsForDeletion:webservice registeredClassesToSync:self.registeredClassesToSync];
-                                                                                        [self executeSyncCompletedOperations];
-                                                                                    }];
-    
-    [[NSOperationQueue mainQueue] addOperations:batchOperations waitUntilFinished:NO];
-
 }
 
 
