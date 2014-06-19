@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+#import "SYSyncEngine.h"
 
+@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, syncEngineDelegate>
+
+//syncEngineDelegate method
+- (void) objectsDownloadedThanksToUpdateUI;
 @end

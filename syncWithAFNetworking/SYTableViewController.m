@@ -7,12 +7,10 @@
 //
 
 #import "SYTableViewController.h"
+#import "SYSoundCloudSyncEngine.h"
 #import "SYCoreDataStackWithSyncStuff.h"
-#import "SYSyncEngine.h"
-#import "SYAddObject.h"
-#import "Drink.h"
-#import "SYAPIKey.h"
-#import "Photo.h"
+#import "Soundcloud.h"
+
 
 @interface SYTableViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -39,10 +37,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[SYSyncEngine sharedEngine] registerNSManagedObjectClassToSync:[Photo class] withWebService:flickr];
+    //[[SYSyncEngine sharedEngine] registerNSManagedObjectClassToSync:[Soundcloud class] withWebService:soundcloud];
 
-
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSError *error;
     
 	if (![self.fetchedResultsController performFetch:&error])
@@ -55,7 +52,7 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    /*
     [self checkSyncStatus];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:@"SDSyncEngineSyncCompleted" object:nil queue:nil usingBlock:^(NSNotification *note) {
@@ -63,6 +60,7 @@
         [self.tableView reloadData];
     }];
     [[SYSyncEngine sharedEngine] addObserver:self forKeyPath:@"syncInProgress" options:NSKeyValueObservingOptionNew context:nil];
+     */
 }
 
 - (void)viewDidUnload {
@@ -75,7 +73,10 @@
 #pragma mark - Lazy Instantiation
 ///////////////////////////////////////////////////////////////////
 -(NSManagedObjectContext *) managedOC {
-    if(!_managedOC) _managedOC = [[SYCoreDataStackWithSyncStuff sharedInstance] backgroundManagedObjectContext];
+    if(!_managedOC) {
+         SYCoreDataStackWithSyncStuff *coreDataWithSyncStuff= [SYCoreDataStackWithSyncStuff sharedInstance];
+        _managedOC = coreDataWithSyncStuff.managedObjectContext;
+    }
     return _managedOC;
 }
 
@@ -86,23 +87,32 @@
 ///////////////////////////////////////////////////////////////////
 
 - (IBAction)refreshButtonTouched:(id)sender {
-    [[SYSyncEngine sharedEngine] startSync];
+    SYSoundCloudSyncEngine *soundCloudSyncEngine = [SYSoundCloudSyncEngine sharedEngine];
+    soundCloudSyncEngine.delegate =self;
+    [soundCloudSyncEngine downloadTracksFromPlaylist:@"39491884"];
+    //@"152617555"
+    
+    //[[SYSoundCloudHTTPClient sharedSoundCloudHTTPClient] getTracksFromSet:[NSString stringWithFormat:@"%i",39491884]];
+    
 }
 
 - (IBAction)addButton:(id)sender {
-    SYAddObject *addObject = [[SYAddObject alloc]init];
-    [addObject saveButtonTouched];
+
 }
-
-
-
-
+/*
 - (void)checkSyncStatus {
     if ([[SYSyncEngine sharedEngine] syncInProgress]) {
         [self replaceRefreshButtonWithActivityIndicator];
     } else {
         [self removeActivityIndicatorFromRefreshButon];
     }
+}
+*/
+
+- (void) objectsDownloadedThanksToUpdateUI {
+    NSError *error =nil;
+    [self.fetchedResultsController performFetch:&error];
+    [self.tableView reloadData];
 }
 
 - (void)replaceRefreshButtonWithActivityIndicator {
@@ -117,12 +127,14 @@
     self.navigationItem.leftBarButtonItem = self.refreshButton;
 }
 
+/*
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"syncInProgress"]) {
         [self checkSyncStatus];
     }
 }
+*/
 
 - (void)loadRecordsFromCoreDataAndReloadData {
     [self.managedOC performBlockAndWait:^{
@@ -151,11 +163,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    Drink *drink = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = drink.name;
-    cell.detailTextLabel.text=@"putain de detail";
+    Soundcloud *sound = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = sound.name;
     return cell;
 }
 
@@ -165,8 +176,14 @@
         return _fetchedResultsController;
     }
     
+    NSArray *arrayOfEntities = [[[self.managedOC persistentStoreCoordinator] managedObjectModel] entities];
+    for (NSEntityDescription *entity in arrayOfEntities) {
+        NSLog(@"entityName : %@", [entity name]);
+    }
+    
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
-    NSEntityDescription *entity =[NSEntityDescription entityForName:@"Drink" inManagedObjectContext:self.managedOC];
+    NSEntityDescription *entity =[NSEntityDescription entityForName:@"Soundcloud" inManagedObjectContext:self.managedOC];
     [fetchRequest setEntity:entity];
 	[fetchRequest setFetchBatchSize:40];
     
@@ -192,12 +209,13 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+       /*
         Drink *drink = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        [self.managedOC performBlockAndWait:^{
+        [self.managedOC performBlockAndWait:^{ */
             /*
              You are no longer just deleting the record from Core Data. In the new model, if the record does NOT have an objectId (meaning it does not exist on the server) the record is immediately deleted as it was before. Otherwise you set the syncStatus to SDObjectDeleted
              */
-            if ([[drink valueForKey:@"objectId"] isEqualToString:@""] || [drink valueForKey:@"objectId"] == nil) {
+        /*    if ([[drink valueForKey:@"objectId"] isEqualToString:@""] || [drink valueForKey:@"objectId"] == nil) {
                 [self.managedOC deleteObject:drink];
             } else {
                 [drink setValue:[NSNumber numberWithInt:SDObjectDeleted] forKey:@"syncStatus"];
@@ -210,7 +228,7 @@
 
             [[SYCoreDataStackWithSyncStuff sharedInstance] saveBackgroundContext];
             [self loadRecordsFromCoreDataAndReloadData];
-        }];
+        }];*/
     }
 }
 @end

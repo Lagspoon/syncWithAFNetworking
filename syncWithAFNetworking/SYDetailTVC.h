@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Drink.h"
+#import <CoreData/CoreData.h>
+
 @interface SYDetailTVC : UITableViewController
-@property (nonatomic, strong) Drink *selectedDrink;
+@property (nonatomic, strong) NSManagedObject *objectSelected;
 @end

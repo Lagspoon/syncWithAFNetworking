@@ -4,20 +4,30 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>syncWithAFNetworking.xcscheme</key>
+		<key>coreDataStackLibrairy.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>097CFFAA183B5D1300F5FAFF</key>
+		<key>0905783A186DA30A0005308C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>097CFFCE183B5D1300F5FAFF</key>
+		<key>0905785A186DA30A0005308C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>094F9CAE19473B5D000215E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>094F9CBB19473B5D000215E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

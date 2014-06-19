@@ -8,7 +8,6 @@
 
 #import "SYAppDelegate.h"
 #import "SYSyncEngine.h"
-#import "Drink.h"
 
 @implementation SYAppDelegate
 

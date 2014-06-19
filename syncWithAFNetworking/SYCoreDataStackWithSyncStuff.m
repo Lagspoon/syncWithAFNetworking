@@ -9,7 +9,6 @@
 #import "SYCoreDataStackWithSyncStuff.h"
 
 @interface SYCoreDataStackWithSyncStuff()
-@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
 @end
 
 
@@ -45,16 +44,20 @@
 }
 
 
-
-
-- (void) saveBackgroundContext {
+- (BOOL) saveBackgroundContext {
+    __block BOOL success = YES;
         [self.backgroundManagedObjectContext performBlockAndWait:^{
             NSError *error = nil;
-            BOOL saved = [self.backgroundManagedObjectContext save:&error];
-            if (!saved) {
-                // do some real error handling
+            if(![self.backgroundManagedObjectContext save:&error]) {
+                success = NO;
                 NSLog(@"Could not save master context due to %@", error);
+            } else {
+                if (![self.managedObjectContext save:&error]) {
+                    NSLog(@"Cannot save managedObjectContext");
+                    success = NO;
+                }
             }
         }];
+    return success;
 }
 @end

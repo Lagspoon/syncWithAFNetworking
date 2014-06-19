@@ -1,37 +1,29 @@
 //
-//  SYHTTPRequestOperation.h
-//  makeMyMouthWater
+//  SYSoundCloudHTTPClient.h
+//  syncWithAFNetworking
 //
-//  Created by Olivier Delecueillerie on 12/11/2013.
-//  Copyright (c) 2013 Olivier Delecueillerie. All rights reserved.
+//  Created by Olivier Delecueillerie on 13/06/2014.
+//  Copyright (c) 2014 Olivier Delecueillerie. All rights reserved.
 //
 
-#import "AFHTTPRequestOperationManager.h"
-#import "SYAPIKey.h"
+#import "AFHTTPSessionManager.h"
+#import <CoreData/CoreData.h>
 
+@protocol HTTPClientParserDelegate <NSObject>
 
-@interface SYHTTPClient : NSObject
+- (NSURL *) filesDirectory;
+- (void) objectsDownloadMonitoringIncrementDownloadsBy:(NSUInteger)nb;
+- (void) objectsDownloadMonitoringIncrementErrorsBy:(NSUInteger)nb;
+- (void) objectsDownloadMonitoringIncrementObjectsBy:(NSUInteger)nb;
+- (BOOL) objectsDownloadMonitoringCompleted;
+- (BOOL) objectsDownloadMonitoringStop;
+- (BOOL) saveObjectsDownloaded;
+- (void) resetObjectsDownloaded;
+@end
 
+@interface SYHTTPClient : AFHTTPSessionManager
 
-
-+ (SYHTTPClient *)sharedClientFor:(webservice)webservice;
-@property (nonatomic, strong) AFHTTPRequestOperationManager *requestOpManager;
-
-
-- (BOOL) downloadDataForClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate;
-
-//GENERIC REQUEST
-//- (NSMutableURLRequest *)GETRequestForClass:(NSString *)className withWebService:(webservice)webservice parameters:(NSDictionary *)parameters;
-//- (NSMutableURLRequest *)GETRequestForAllRecordsOfClass:(NSString *)className withWebService:(webservice)webservice updatedAfterDate:(NSDate *)updatedDate;
-
-//PARSE REQUEST
-- (NSMutableURLRequest *)parsePOSTRequestForClass:(NSString *)className parameters:(NSDictionary *)parameters;
-- (NSMutableURLRequest *)parseDELETERequestForClass:(NSString *)className forObjectWithId:(NSString *)objectId;
-
-
-//FLICKR REQUEST
-- (NSMutableURLRequest *) flickrGETRequest:(NSString *) method parameters:(NSDictionary *)parameters;
-- (NSMutableURLRequest *) flickrGETPhotoWithFarmId:(NSString *)farmId  serverId:(NSString *)serverId photoId:(NSString *)photoId secret:(NSString *)secret size:(NSString *)size;
-- (UIImage *) downloadPhotoFromFlickr:(NSDictionary *)record;
+- (instancetype)initWithBaseURL:(NSURL *)url;
+@property (nonatomic, weak) id <HTTPClientParserDelegate> delegateParser;
 
 @end

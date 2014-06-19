@@ -1,24 +1,22 @@
 //
-//  SYSyncEngine.h
-//  makeMyMouthWater
+//  SYSoundCloudSyncEngine.h
+//  syncWithAFNetworking
 //
-//  Created by Olivier Delecueillerie on 13/11/2013.
-//  Copyright (c) 2013 Olivier Delecueillerie. All rights reserved.
+//  Created by Olivier Delecueillerie on 17/06/2014.
+//  Copyright (c) 2014 Olivier Delecueillerie. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "SYAPIKey.h"
+#import "SYCoreDataStackWithSyncStuff.h"
 
-@interface SYSyncEngine : NSObject
+@protocol syncEngineDelegate
 
-+ (SYSyncEngine *)sharedEngine;
+-(void) objectsDownloadedThanksToUpdateUI;
+@end
 
-- (void) registerNSManagedObjectClassToSync:(Class)aClass withWebService:(webservice) webservice;
+@interface SYSyncEngine : NSObject <NSObject>
 
-- (void) startSync;
-
-
-@property (atomic, readonly) BOOL syncInProgress;
+@property (strong, nonatomic) id <syncEngineDelegate> delegate;
 
 
 @end
