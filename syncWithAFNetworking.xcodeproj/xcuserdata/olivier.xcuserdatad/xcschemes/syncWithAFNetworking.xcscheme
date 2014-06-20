@@ -38,6 +38,16 @@
                ReferencedContainer = "container:syncWithAFNetworking.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "092D2CF019542C44004661C2"
+               BuildableName = "syncWithAFNetworkingLibraryTests.xctest"
+               BlueprintName = "syncWithAFNetworkingLibraryTests"
+               ReferencedContainer = "container:syncWithAFNetworking.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

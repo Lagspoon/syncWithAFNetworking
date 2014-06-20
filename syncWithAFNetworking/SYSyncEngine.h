@@ -7,16 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SYCoreDataStackWithSyncStuff.h"
+#import <CoreData/CoreData.h>
 
 @protocol syncEngineDelegate
 
--(void) objectsDownloadedThanksToUpdateUI;
+-(NSString *)entityName;
+-(NSManagedObjectContext *)managedObjectContext;
+- (void) managedObjectContextUpdated;
+
 @end
 
-@interface SYSyncEngine : NSObject <NSObject>
-
-@property (strong, nonatomic) id <syncEngineDelegate> delegate;
-
+@interface SYSyncEngine : NSObject
++ (SYSyncEngine *)sharedEngine;
+@property (weak, nonatomic) id <syncEngineDelegate> delegate;
 
 @end

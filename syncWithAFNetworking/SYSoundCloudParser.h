@@ -7,16 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SYSoundCloudHTTPClient.h"
 #import "SYParser.h"
 
-@protocol soundCloudParserSyncEngineDelegate <parserSynEngineDelegate>
 
-@end
-
-@interface SYSoundCloudParser : SYParser <soundCloudHTTPClientParserDelegate>
-
-@property (nonatomic, weak) id <soundCloudParserSyncEngineDelegate> delegateSyncEngine;
-
+@interface SYSoundCloudParser : SYParser
+-(NSArray *) objectDictionaryFromResponseObject:(NSDictionary *) responseObject;
+- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary;
 
 @end

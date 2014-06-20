@@ -7,8 +7,13 @@
 //
 
 #import "SYSoundCloudHTTPClient.h"
-//#import "SYAPIKey.h"
 #import "SYSoundCloudParser.h"
+
+@interface SYSoundCloudHTTPClient ()
+
+@property (strong, nonatomic) SYSoundCloudParser *parser;
+
+@end
 
 @implementation SYSoundCloudHTTPClient
 
@@ -24,16 +29,20 @@
     return _sharedHTTPClient;
 }
 
+- (id) initWithBaseURL:(NSURL *)url {
+    self = [super initWithBaseURL:url];
+    self.parser = [[SYSoundCloudParser alloc] init];
+    return self;
+}
 
 - (void) downloadSetWithId :(NSString *) playlist withClientId:(NSString *)clientId {
     
     NSString *URLString = [NSString stringWithFormat:@"http://api.soundcloud.com/playlists/%@.json?client_id=%@",playlist,clientId ];
-
     [self GET:URLString parameters:nil
 
       success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSArray * arrayOfTrackDictionary = [self.delegateParser objectDictionaryFromResponseObject:responseObject];
-          [self.delegateParser objectsDownloadMonitoringIncrementObjectsBy:[arrayOfTrackDictionary count]];
+          NSArray * arrayOfTrackDictionary = [self.parser objectDictionaryFromResponseObject:responseObject];
+          [self.parser objectsDownloadMonitoringIncrementObjectsBy:[arrayOfTrackDictionary count]];
         
           for (NSDictionary * trackDictionary in arrayOfTrackDictionary) {
               [self importTrackDictionary:trackDictionary];
@@ -60,17 +69,17 @@
     NSURLSessionDownloadTask *downloadTask = [self downloadTaskWithRequest:[NSURLRequest requestWithURL:completedURL] progress:&progress
                       
                 destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-                    NSURL *URLDestination = [[self.delegateParser filesDirectory] URLByAppendingPathComponent:title];
+                    NSURL *URLDestination = [[self.parser filesDirectory] URLByAppendingPathComponent:title];
                     return URLDestination; //[targetPath lastPathComponent]];
                     [trackDictionaryUpdated addEntriesFromDictionary:@{@"file": URLDestination}];
                 }
                                               
                 completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
                     NSLog(@"File downloaded to: %@", filePath);
-                    [self.delegateParser newManagedObjectFromObjectDictionary:trackDictionaryUpdated];
+                    [self.parser newManagedObjectFromObjectDictionary:trackDictionaryUpdated];
                     
                     if (error) {
-                        [self.delegateParser objectsDownloadMonitoringIncrementErrorsBy:1];
+                        [self.parser objectsDownloadMonitoringIncrementErrorsBy:1];
                     }
                 }
                                               ];

@@ -7,15 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		090578F5186F0ADB0005308C /* SYDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 090578F4186F0ADB0005308C /* SYDetailTVC.m */; };
 		092D2C95194B3B60004661C2 /* SYSoundCloudHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */; };
 		092D2C98194C83E6004661C2 /* SYSoundCloudParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C97194C83E6004661C2 /* SYSoundCloudParser.m */; };
 		092D2C9B195056AC004661C2 /* SYSoundCloudSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C9A195056AC004661C2 /* SYSoundCloudSyncEngine.m */; };
 		092D2CA419508EC7004661C2 /* SYSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA319508EC7004661C2 /* SYSyncEngine.m */; };
 		092D2CA71950940E004661C2 /* SYParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA61950940E004661C2 /* SYParser.m */; };
 		092D2CAA1950942D004661C2 /* SYHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA91950942D004661C2 /* SYHTTPClient.m */; };
-		092D2CAD1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CAC1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.m */; };
-		092D2CB11950F63A004661C2 /* menuCoreDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 092D2CAF1950F63A004661C2 /* menuCoreDataModel.xcdatamodeld */; };
+		092D2CC719539EB8004661C2 /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC219539EB8004661C2 /* SYAppDelegate.m */; };
+		092D2CC819539EB8004661C2 /* SYDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC419539EB8004661C2 /* SYDetailTVC.m */; };
+		092D2CC919539EB8004661C2 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC619539EB8004661C2 /* SYTableViewController.m */; };
+		092D2CCD19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */; };
+		092D2CE519542C44004661C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFAE183B5D1300F5FAFF /* Foundation.framework */; };
+		092D2CEA19542C44004661C2 /* syncWithAFNetworkingLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 092D2CE919542C44004661C2 /* syncWithAFNetworkingLibrary.h */; };
+		092D2CEC19542C44004661C2 /* syncWithAFNetworkingLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CEB19542C44004661C2 /* syncWithAFNetworkingLibrary.m */; };
+		092D2D0919542CB5004661C2 /* SYSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA319508EC7004661C2 /* SYSyncEngine.m */; };
+		092D2D0A19542CB5004661C2 /* SYHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA91950942D004661C2 /* SYHTTPClient.m */; };
+		092D2D0B19542CB5004661C2 /* SYParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA61950940E004661C2 /* SYParser.m */; };
+		092D2D0D19542CB5004661C2 /* SYSoundCloudSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C9A195056AC004661C2 /* SYSoundCloudSyncEngine.m */; };
+		092D2D0E19542CB5004661C2 /* SYSoundCloudParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C97194C83E6004661C2 /* SYSoundCloudParser.m */; };
+		092D2D0F19542CB5004661C2 /* SYSoundCloudHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */; };
+		092D2D1019542CBD004661C2 /* libcoreDataStackLibrairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */; };
+		092D2D1219542D37004661C2 /* SYSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2CA219508E62004661C2 /* SYSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D1319542D37004661C2 /* SYHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2CA819509421004661C2 /* SYHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D1419542D37004661C2 /* SYParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2CA5195093F9004661C2 /* SYParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D1619542D37004661C2 /* SYSoundCloudSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C99195056AC004661C2 /* SYSoundCloudSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D1719542D37004661C2 /* SYSoundCloudParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C96194C83E6004661C2 /* SYSoundCloudParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D1819542D37004661C2 /* SYSoundCloudHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C93194B3B60004661C2 /* SYSoundCloudHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D1D19545D74004661C2 /* libcoreDataStackLibrairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */; };
 		094F9C1D1945F6A9000215E8 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0B1945F6A9000215E8 /* AFHTTPRequestOperation.m */; };
 		094F9C1E1945F6A9000215E8 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0D1945F6A9000215E8 /* AFHTTPRequestOperationManager.m */; };
 		094F9C1F1945F6A9000215E8 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0F1945F6A9000215E8 /* AFHTTPSessionManager.m */; };
@@ -25,29 +43,25 @@
 		094F9C231945F6A9000215E8 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C181945F6A9000215E8 /* AFURLRequestSerialization.m */; };
 		094F9C241945F6A9000215E8 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C1A1945F6A9000215E8 /* AFURLResponseSerialization.m */; };
 		094F9C251945F6A9000215E8 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C1C1945F6A9000215E8 /* AFURLSessionManager.m */; };
-		094F9C4F19472B66000215E8 /* genericSyncWithAFNetworking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 094F9C4D19472B66000215E8 /* genericSyncWithAFNetworking.storyboard */; };
-		094F9CF01947415C000215E8 /* libcoreDataStackLibrairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 094F9CD919473DC4000215E8 /* libcoreDataStackLibrairy.a */; };
-		097C000F183B652A00F5FAFF /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 097C000E183B652A00F5FAFF /* SYTableViewController.m */; };
 		097CFFAF183B5D1300F5FAFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFAE183B5D1300F5FAFF /* Foundation.framework */; };
 		097CFFB1183B5D1300F5FAFF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFB0183B5D1300F5FAFF /* CoreGraphics.framework */; };
 		097CFFB3183B5D1300F5FAFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFB2183B5D1300F5FAFF /* UIKit.framework */; };
 		097CFFB9183B5D1300F5FAFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 097CFFB7183B5D1300F5FAFF /* InfoPlist.strings */; };
 		097CFFBB183B5D1300F5FAFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CFFBA183B5D1300F5FAFF /* main.m */; };
-		097CFFBF183B5D1300F5FAFF /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CFFBE183B5D1300F5FAFF /* SYAppDelegate.m */; };
 		097CFFCA183B5D1300F5FAFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097CFFC9183B5D1300F5FAFF /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		094F9CD819473DC4000215E8 /* PBXContainerItemProxy */ = {
+		092D2CD219539F0F004661C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 094F9C70194735B3000215E8 /* coreDataStack.xcodeproj */;
+			containerPortal = 092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 094F9CAF19473B5D000215E8;
 			remoteInfo = coreDataStackLibrairy;
 		};
-		094F9CEE19474150000215E8 /* PBXContainerItemProxy */ = {
+		092D2D1B19545D41004661C2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 094F9C70194735B3000215E8 /* coreDataStack.xcodeproj */;
+			containerPortal = 092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 094F9CAE19473B5D000215E8;
 			remoteInfo = coreDataStackLibrairy;
@@ -64,11 +78,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		092D2CE219542C44004661C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				092D2CEA19542C44004661C2 /* syncWithAFNetworkingLibrary.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		090578F3186F0ADB0005308C /* SYDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYDetailTVC.h; sourceTree = "<group>"; };
-		090578F4186F0ADB0005308C /* SYDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYDetailTVC.m; sourceTree = "<group>"; };
 		092D2C93194B3B60004661C2 /* SYSoundCloudHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudHTTPClient.h; sourceTree = "<group>"; };
 		092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoundCloudHTTPClient.m; sourceTree = "<group>"; };
 		092D2C96194C83E6004661C2 /* SYSoundCloudParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudParser.h; sourceTree = "<group>"; };
@@ -81,9 +103,23 @@
 		092D2CA61950940E004661C2 /* SYParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYParser.m; sourceTree = "<group>"; };
 		092D2CA819509421004661C2 /* SYHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHTTPClient.h; sourceTree = "<group>"; };
 		092D2CA91950942D004661C2 /* SYHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHTTPClient.m; sourceTree = "<group>"; };
-		092D2CAB1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYCoreDataStackWithSyncStuff.h; sourceTree = "<group>"; };
-		092D2CAC1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYCoreDataStackWithSyncStuff.m; sourceTree = "<group>"; };
-		092D2CB01950F63A004661C2 /* menuCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = menuCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		092D2CC119539EB8004661C2 /* SYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYAppDelegate.h; path = syncWithAFNetworking/SYAppDelegate.h; sourceTree = "<group>"; };
+		092D2CC219539EB8004661C2 /* SYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYAppDelegate.m; path = syncWithAFNetworking/SYAppDelegate.m; sourceTree = "<group>"; };
+		092D2CC319539EB8004661C2 /* SYDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYDetailTVC.h; path = syncWithAFNetworking/SYDetailTVC.h; sourceTree = "<group>"; };
+		092D2CC419539EB8004661C2 /* SYDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYDetailTVC.m; path = syncWithAFNetworking/SYDetailTVC.m; sourceTree = "<group>"; };
+		092D2CC519539EB8004661C2 /* SYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYTableViewController.h; path = syncWithAFNetworking/SYTableViewController.h; sourceTree = "<group>"; };
+		092D2CC619539EB8004661C2 /* SYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYTableViewController.m; path = syncWithAFNetworking/SYTableViewController.m; sourceTree = "<group>"; };
+		092D2CCC19539EEE004661C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = syncWithAFNetworking/Base.lproj/genericSyncWithAFNetworking.storyboard; sourceTree = "<group>"; };
+		092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = coreDataStack.xcodeproj; path = addOn/coreDataStack/coreDataStack.xcodeproj; sourceTree = "<group>"; };
+		092D2CDD19542B06004661C2 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = APIKey.h; path = ../../../APIKey.h; sourceTree = "<group>"; };
+		092D2CE419542C44004661C2 /* libsyncWithAFNetworkingLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsyncWithAFNetworkingLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		092D2CE819542C44004661C2 /* syncWithAFNetworkingLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncWithAFNetworkingLibrary-Prefix.pch"; sourceTree = "<group>"; };
+		092D2CE919542C44004661C2 /* syncWithAFNetworkingLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = syncWithAFNetworkingLibrary.h; sourceTree = "<group>"; };
+		092D2CEB19542C44004661C2 /* syncWithAFNetworkingLibrary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = syncWithAFNetworkingLibrary.m; sourceTree = "<group>"; };
+		092D2CF219542C44004661C2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		092D2CFB19542C44004661C2 /* syncWithAFNetworkingLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "syncWithAFNetworkingLibraryTests-Info.plist"; sourceTree = "<group>"; };
+		092D2CFD19542C44004661C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		092D2CFF19542C44004661C2 /* syncWithAFNetworkingLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = syncWithAFNetworkingLibraryTests.m; sourceTree = "<group>"; };
 		094F9C0A1945F6A9000215E8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		094F9C0B1945F6A9000215E8 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		094F9C0C1945F6A9000215E8 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -103,10 +139,6 @@
 		094F9C1A1945F6A9000215E8 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		094F9C1B1945F6A9000215E8 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		094F9C1C1945F6A9000215E8 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		094F9C4E19472B66000215E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/genericSyncWithAFNetworking.storyboard; sourceTree = "<group>"; };
-		094F9C70194735B3000215E8 /* coreDataStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = coreDataStack.xcodeproj; path = addOn/coreDataStack/coreDataStack.xcodeproj; sourceTree = "<group>"; };
-		097C000D183B652A00F5FAFF /* SYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYTableViewController.h; sourceTree = "<group>"; };
-		097C000E183B652A00F5FAFF /* SYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYTableViewController.m; sourceTree = "<group>"; };
 		097CFFAB183B5D1300F5FAFF /* syncWithAFNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = syncWithAFNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		097CFFAE183B5D1300F5FAFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		097CFFB0183B5D1300F5FAFF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,17 +147,24 @@
 		097CFFB8183B5D1300F5FAFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		097CFFBA183B5D1300F5FAFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		097CFFBC183B5D1300F5FAFF /* syncWithAFNetworking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncWithAFNetworking-Prefix.pch"; sourceTree = "<group>"; };
-		097CFFBD183B5D1300F5FAFF /* SYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SYAppDelegate.h; sourceTree = "<group>"; };
-		097CFFBE183B5D1300F5FAFF /* SYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYAppDelegate.m; sourceTree = "<group>"; };
 		097CFFC9183B5D1300F5FAFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		092D2CE119542C44004661C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				092D2D1019542CBD004661C2 /* libcoreDataStackLibrairy.a in Frameworks */,
+				092D2CE519542C44004661C2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		097CFFA8183B5D1300F5FAFF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094F9CF01947415C000215E8 /* libcoreDataStackLibrairy.a in Frameworks */,
+				092D2D1D19545D74004661C2 /* libcoreDataStackLibrairy.a in Frameworks */,
 				097CFFB1183B5D1300F5FAFF /* CoreGraphics.framework in Frameworks */,
 				097CFFB3183B5D1300F5FAFF /* UIKit.framework in Frameworks */,
 				097CFFAF183B5D1300F5FAFF /* Foundation.framework in Frameworks */,
@@ -135,21 +174,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09206900185A49A40079A625 /* interface */ = {
-			isa = PBXGroup;
-			children = (
-				094F9C4D19472B66000215E8 /* genericSyncWithAFNetworking.storyboard */,
-				097C000D183B652A00F5FAFF /* SYTableViewController.h */,
-				097C000E183B652A00F5FAFF /* SYTableViewController.m */,
-				090578F3186F0ADB0005308C /* SYDetailTVC.h */,
-				090578F4186F0ADB0005308C /* SYDetailTVC.m */,
-				097CFFBD183B5D1300F5FAFF /* SYAppDelegate.h */,
-				097CFFBE183B5D1300F5FAFF /* SYAppDelegate.m */,
-			);
-			name = interface;
-			path = syncWithAFNetworking;
-			sourceTree = "<group>";
-		};
 		092D2C9D1950577B004661C2 /* soundCloud */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +185,64 @@
 				092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */,
 			);
 			name = soundCloud;
+			sourceTree = "<group>";
+		};
+		092D2CCA19539EC7004661C2 /* UIForTestPurpose */ = {
+			isa = PBXGroup;
+			children = (
+				092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */,
+				092D2CC119539EB8004661C2 /* SYAppDelegate.h */,
+				092D2CC219539EB8004661C2 /* SYAppDelegate.m */,
+				092D2CC319539EB8004661C2 /* SYDetailTVC.h */,
+				092D2CC419539EB8004661C2 /* SYDetailTVC.m */,
+				092D2CC519539EB8004661C2 /* SYTableViewController.h */,
+				092D2CC619539EB8004661C2 /* SYTableViewController.m */,
+			);
+			name = UIForTestPurpose;
+			sourceTree = "<group>";
+		};
+		092D2CCF19539F0F004661C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		092D2CE619542C44004661C2 /* syncWithAFNetworkingLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				092D2CE919542C44004661C2 /* syncWithAFNetworkingLibrary.h */,
+				092D2CEB19542C44004661C2 /* syncWithAFNetworkingLibrary.m */,
+				092D2CE719542C44004661C2 /* Supporting Files */,
+			);
+			path = syncWithAFNetworkingLibrary;
+			sourceTree = "<group>";
+		};
+		092D2CE719542C44004661C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				092D2CE819542C44004661C2 /* syncWithAFNetworkingLibrary-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		092D2CF919542C44004661C2 /* syncWithAFNetworkingLibraryTests */ = {
+			isa = PBXGroup;
+			children = (
+				092D2CFF19542C44004661C2 /* syncWithAFNetworkingLibraryTests.m */,
+				092D2CFA19542C44004661C2 /* Supporting Files */,
+			);
+			path = syncWithAFNetworkingLibraryTests;
+			sourceTree = "<group>";
+		};
+		092D2CFA19542C44004661C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				092D2CFB19542C44004661C2 /* syncWithAFNetworkingLibraryTests-Info.plist */,
+				092D2CFC19542C44004661C2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		094F9C091945F6A9000215E8 /* AFNetworking */ = {
@@ -189,29 +271,15 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
-		094F9C71194735B3000215E8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				094F9CD919473DC4000215E8 /* libcoreDataStackLibrairy.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		097C0013183B6B2A00F5FAFF /* Add from other project */ = {
-			isa = PBXGroup;
-			children = (
-				094F9C70194735B3000215E8 /* coreDataStack.xcodeproj */,
-			);
-			name = "Add from other project";
-			sourceTree = "<group>";
-		};
 		097CFFA2183B5D1300F5FAFF = {
 			isa = PBXGroup;
 			children = (
-				092D2CAF1950F63A004661C2 /* menuCoreDataModel.xcdatamodeld */,
-				09206900185A49A40079A625 /* interface */,
+				092D2CDD19542B06004661C2 /* APIKey.h */,
+				092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */,
+				092D2CCA19539EC7004661C2 /* UIForTestPurpose */,
 				097CFFB4183B5D1300F5FAFF /* syncWithAFNetworking */,
-				097C0013183B6B2A00F5FAFF /* Add from other project */,
+				092D2CE619542C44004661C2 /* syncWithAFNetworkingLibrary */,
+				092D2CF919542C44004661C2 /* syncWithAFNetworkingLibraryTests */,
 				097CFFAD183B5D1300F5FAFF /* Frameworks */,
 				097CFFAC183B5D1300F5FAFF /* Products */,
 			);
@@ -221,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				097CFFAB183B5D1300F5FAFF /* syncWithAFNetworking.app */,
+				092D2CE419542C44004661C2 /* libsyncWithAFNetworkingLibrary.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,6 +301,7 @@
 				097CFFAE183B5D1300F5FAFF /* Foundation.framework */,
 				097CFFB0183B5D1300F5FAFF /* CoreGraphics.framework */,
 				097CFFB2183B5D1300F5FAFF /* UIKit.framework */,
+				092D2CF219542C44004661C2 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,8 +315,6 @@
 				092D2CA91950942D004661C2 /* SYHTTPClient.m */,
 				092D2CA5195093F9004661C2 /* SYParser.h */,
 				092D2CA61950940E004661C2 /* SYParser.m */,
-				092D2CAB1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.h */,
-				092D2CAC1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.m */,
 				092D2C9D1950577B004661C2 /* soundCloud */,
 				097CFFC9183B5D1300F5FAFF /* Images.xcassets */,
 				097CFFB5183B5D1300F5FAFF /* Supporting Files */,
@@ -267,7 +335,48 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		092D2CDF19542B85004661C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		092D2D1119542D16004661C2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				092D2D1219542D37004661C2 /* SYSyncEngine.h in Headers */,
+				092D2D1319542D37004661C2 /* SYHTTPClient.h in Headers */,
+				092D2D1419542D37004661C2 /* SYParser.h in Headers */,
+				092D2D1619542D37004661C2 /* SYSoundCloudSyncEngine.h in Headers */,
+				092D2D1719542D37004661C2 /* SYSoundCloudParser.h in Headers */,
+				092D2D1819542D37004661C2 /* SYSoundCloudHTTPClient.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		092D2CE319542C44004661C2 /* syncWithAFNetworkingLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 092D2D0119542C44004661C2 /* Build configuration list for PBXNativeTarget "syncWithAFNetworkingLibrary" */;
+			buildPhases = (
+				092D2CE019542C44004661C2 /* Sources */,
+				092D2CE119542C44004661C2 /* Frameworks */,
+				092D2CE219542C44004661C2 /* CopyFiles */,
+				092D2D1119542D16004661C2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = syncWithAFNetworkingLibrary;
+			productName = syncWithAFNetworkingLibrary;
+			productReference = 092D2CE419542C44004661C2 /* libsyncWithAFNetworkingLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		097CFFAA183B5D1300F5FAFF /* syncWithAFNetworking */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 097CFFE0183B5D1300F5FAFF /* Build configuration list for PBXNativeTarget "syncWithAFNetworking" */;
@@ -276,11 +385,12 @@
 				097CFFA8183B5D1300F5FAFF /* Frameworks */,
 				097CFFA9183B5D1300F5FAFF /* Resources */,
 				092D2CAE1950F4A3004661C2 /* CopyFiles */,
+				092D2CDF19542B85004661C2 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				094F9CEF19474150000215E8 /* PBXTargetDependency */,
+				092D2D1C19545D41004661C2 /* PBXTargetDependency */,
 			);
 			name = syncWithAFNetworking;
 			productName = syncWithAFNetworking;
@@ -310,23 +420,24 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 094F9C71194735B3000215E8 /* Products */;
-					ProjectRef = 094F9C70194735B3000215E8 /* coreDataStack.xcodeproj */;
+					ProductGroup = 092D2CCF19539F0F004661C2 /* Products */;
+					ProjectRef = 092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
 				097CFFAA183B5D1300F5FAFF /* syncWithAFNetworking */,
+				092D2CE319542C44004661C2 /* syncWithAFNetworkingLibrary */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		094F9CD919473DC4000215E8 /* libcoreDataStackLibrairy.a */ = {
+		092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libcoreDataStackLibrairy.a;
-			remoteRef = 094F9CD819473DC4000215E8 /* PBXContainerItemProxy */;
+			remoteRef = 092D2CD219539F0F004661C2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -336,8 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092D2CB11950F63A004661C2 /* menuCoreDataModel.xcdatamodeld in Resources */,
-				094F9C4F19472B66000215E8 /* genericSyncWithAFNetworking.storyboard in Resources */,
+				092D2CCD19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard in Resources */,
 				097CFFCA183B5D1300F5FAFF /* Images.xcassets in Resources */,
 				097CFFB9183B5D1300F5FAFF /* InfoPlist.strings in Resources */,
 			);
@@ -346,29 +456,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		092D2CE019542C44004661C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				092D2D0919542CB5004661C2 /* SYSyncEngine.m in Sources */,
+				092D2D0A19542CB5004661C2 /* SYHTTPClient.m in Sources */,
+				092D2D0B19542CB5004661C2 /* SYParser.m in Sources */,
+				092D2D0D19542CB5004661C2 /* SYSoundCloudSyncEngine.m in Sources */,
+				092D2D0E19542CB5004661C2 /* SYSoundCloudParser.m in Sources */,
+				092D2D0F19542CB5004661C2 /* SYSoundCloudHTTPClient.m in Sources */,
+				092D2CEC19542C44004661C2 /* syncWithAFNetworkingLibrary.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		097CFFA7183B5D1300F5FAFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				094F9C211945F6A9000215E8 /* AFSecurityPolicy.m in Sources */,
+				092D2CC919539EB8004661C2 /* SYTableViewController.m in Sources */,
 				094F9C221945F6A9000215E8 /* AFURLConnectionOperation.m in Sources */,
 				092D2CA419508EC7004661C2 /* SYSyncEngine.m in Sources */,
-				092D2CAD1950A7F5004661C2 /* SYCoreDataStackWithSyncStuff.m in Sources */,
-				097C000F183B652A00F5FAFF /* SYTableViewController.m in Sources */,
 				094F9C251945F6A9000215E8 /* AFURLSessionManager.m in Sources */,
 				092D2C95194B3B60004661C2 /* SYSoundCloudHTTPClient.m in Sources */,
-				090578F5186F0ADB0005308C /* SYDetailTVC.m in Sources */,
 				094F9C241945F6A9000215E8 /* AFURLResponseSerialization.m in Sources */,
 				094F9C1E1945F6A9000215E8 /* AFHTTPRequestOperationManager.m in Sources */,
 				094F9C1D1945F6A9000215E8 /* AFHTTPRequestOperation.m in Sources */,
 				094F9C201945F6A9000215E8 /* AFNetworkReachabilityManager.m in Sources */,
-				097CFFBF183B5D1300F5FAFF /* SYAppDelegate.m in Sources */,
+				092D2CC819539EB8004661C2 /* SYDetailTVC.m in Sources */,
 				092D2CAA1950942D004661C2 /* SYHTTPClient.m in Sources */,
 				092D2CA71950940E004661C2 /* SYParser.m in Sources */,
 				092D2C9B195056AC004661C2 /* SYSoundCloudSyncEngine.m in Sources */,
 				092D2C98194C83E6004661C2 /* SYSoundCloudParser.m in Sources */,
 				097CFFBB183B5D1300F5FAFF /* main.m in Sources */,
 				094F9C231945F6A9000215E8 /* AFURLRequestSerialization.m in Sources */,
+				092D2CC719539EB8004661C2 /* SYAppDelegate.m in Sources */,
 				094F9C1F1945F6A9000215E8 /* AFHTTPSessionManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,20 +499,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		094F9CEF19474150000215E8 /* PBXTargetDependency */ = {
+		092D2D1C19545D41004661C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = coreDataStackLibrairy;
-			targetProxy = 094F9CEE19474150000215E8 /* PBXContainerItemProxy */;
+			targetProxy = 092D2D1B19545D41004661C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		094F9C4D19472B66000215E8 /* genericSyncWithAFNetworking.storyboard */ = {
+		092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				094F9C4E19472B66000215E8 /* Base */,
+				092D2CCC19539EEE004661C2 /* Base */,
 			);
 			name = genericSyncWithAFNetworking.storyboard;
+			sourceTree = "<group>";
+		};
+		092D2CFC19542C44004661C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				092D2CFD19542C44004661C2 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		097CFFB7183B5D1300F5FAFF /* InfoPlist.strings */ = {
@@ -403,6 +534,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		092D2D0219542C44004661C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/syncWithAFNetworkingLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "syncWithAFNetworkingLibrary/syncWithAFNetworkingLibrary-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		092D2D0319542C44004661C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/syncWithAFNetworkingLibrary.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "syncWithAFNetworkingLibrary/syncWithAFNetworkingLibrary-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		097CFFDE183B5D1300F5FAFF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -532,6 +695,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		092D2D0119542C44004661C2 /* Build configuration list for PBXNativeTarget "syncWithAFNetworkingLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				092D2D0219542C44004661C2 /* Debug */,
+				092D2D0319542C44004661C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		097CFFA6183B5D1300F5FAFF /* Build configuration list for PBXProject "syncWithAFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -551,20 +723,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		092D2CAF1950F63A004661C2 /* menuCoreDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				092D2CB01950F63A004661C2 /* menuCoreDataModel.xcdatamodel */,
-			);
-			currentVersion = 092D2CB01950F63A004661C2 /* menuCoreDataModel.xcdatamodel */;
-			name = menuCoreDataModel.xcdatamodeld;
-			path = addOn/coreDataStack/coreDataStack/menuCoreDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 097CFFA3183B5D1300F5FAFF /* Project object */;
 }

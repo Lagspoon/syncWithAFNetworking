@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "SYSyncEngine.h"
+#import "SYSoundCloudSyncEngine.h"
 
-@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, syncEngineDelegate>
+@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, soundCloudSyncEngineDelegate>
 
-//syncEngineDelegate method
-- (void) objectsDownloadedThanksToUpdateUI;
 @end

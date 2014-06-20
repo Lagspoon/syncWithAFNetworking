@@ -7,18 +7,23 @@
 
 #import "SYSyncEngine.h"
 
-
-
-
-
 @interface SYSyncEngine ()
 
 @end
 
 @implementation SYSyncEngine
 
-- (void) managedObjectContextUpdated {
-    [self.delegate objectsDownloadedThanksToUpdateUI];
+
++ (SYSyncEngine *)sharedEngine
+{
+    static SYSyncEngine *_sharedEngine = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedEngine = [[self alloc] init];
+    });
+    
+    return _sharedEngine;
 }
 
 

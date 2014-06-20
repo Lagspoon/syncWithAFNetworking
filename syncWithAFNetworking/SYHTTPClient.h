@@ -7,23 +7,10 @@
 //
 
 #import "AFHTTPSessionManager.h"
-#import <CoreData/CoreData.h>
-
-@protocol HTTPClientParserDelegate <NSObject>
-
-- (NSURL *) filesDirectory;
-- (void) objectsDownloadMonitoringIncrementDownloadsBy:(NSUInteger)nb;
-- (void) objectsDownloadMonitoringIncrementErrorsBy:(NSUInteger)nb;
-- (void) objectsDownloadMonitoringIncrementObjectsBy:(NSUInteger)nb;
-- (BOOL) objectsDownloadMonitoringCompleted;
-- (BOOL) objectsDownloadMonitoringStop;
-- (BOOL) saveObjectsDownloaded;
-- (void) resetObjectsDownloaded;
-@end
+#import "SYParser.h"
 
 @interface SYHTTPClient : AFHTTPSessionManager
 
 - (instancetype)initWithBaseURL:(NSURL *)url;
-@property (nonatomic, weak) id <HTTPClientParserDelegate> delegateParser;
 
 @end

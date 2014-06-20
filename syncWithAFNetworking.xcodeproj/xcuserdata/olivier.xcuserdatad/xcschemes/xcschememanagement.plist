@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>syncWithAFNetworkingLibrary.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>092D2CE319542C44004661C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>092D2CF019542C44004661C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>097CFFAA183B5D1300F5FAFF</key>
 		<dict>
 			<key>primary</key>

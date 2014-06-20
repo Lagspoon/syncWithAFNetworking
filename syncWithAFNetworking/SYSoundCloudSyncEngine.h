@@ -7,13 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 #import "SYSyncEngine.h"
 #import "SYSoundCloudHTTPClient.h"
-#import "SYSoundCloudParser.h"
 
-@interface SYSoundCloudSyncEngine : SYSyncEngine <soundCloudParserSyncEngineDelegate>
+@protocol soundCloudSyncEngineDelegate <syncEngineDelegate>
+
+-(void) mappingManagedObject:(NSManagedObject *)managedObject audio:(NSData *)audio name:(NSString *)name createdAt:(NSDate *)createdAt ;
+
+@end
+
+@interface SYSoundCloudSyncEngine : SYSyncEngine
 
 + (SYSoundCloudSyncEngine *) sharedEngine;
 - (void) downloadTracksFromPlaylist:(NSString *) playListID;
+@property (weak, nonatomic) id <soundCloudSyncEngineDelegate> delegate;
+
 
 @end

@@ -7,25 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SYHTTPClient.h"
+#import "SYSyncEngine.h"
 
-@protocol parserSynEngineDelegate <NSObject>
+@interface SYParser : NSObject
 
-- (void) managedObjectContextUpdated;
-
-@end
-
-
-@protocol parserCoreDataDelegate <NSObject>
-
-@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+- (NSURL *) filesDirectory;
+- (void) objectsDownloadMonitoringIncrementDownloadsBy:(NSUInteger)nb;
+- (void) objectsDownloadMonitoringIncrementErrorsBy:(NSUInteger)nb;
+- (void) objectsDownloadMonitoringIncrementObjectsBy:(NSUInteger)nb;
+- (BOOL) objectsDownloadMonitoringCompleted;
+- (BOOL) objectsDownloadMonitoringStop;
+- (BOOL) saveObjectsDownloaded;
+- (void) resetObjectsDownloaded;
 - (BOOL) saveBackgroundContext;
 
-@end
+@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
 
-
-
-@interface SYParser : NSObject <HTTPClientParserDelegate>
-@property (nonatomic, weak) id <parserCoreDataDelegate> delegateCoreData;
-@property (nonatomic, weak) id <parserSynEngineDelegate> delegateSyncEngine;
 @end

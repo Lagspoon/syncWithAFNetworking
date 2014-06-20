@@ -8,9 +8,8 @@
 
 #import "SYTableViewController.h"
 #import "SYSoundCloudSyncEngine.h"
-#import "SYCoreDataStackWithSyncStuff.h"
 #import "Soundcloud.h"
-
+#import "DBCoreDataStack.h"
 
 @interface SYTableViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -74,8 +73,8 @@
 ///////////////////////////////////////////////////////////////////
 -(NSManagedObjectContext *) managedOC {
     if(!_managedOC) {
-         SYCoreDataStackWithSyncStuff *coreDataWithSyncStuff= [SYCoreDataStackWithSyncStuff sharedInstance];
-        _managedOC = coreDataWithSyncStuff.managedObjectContext;
+         DBCoreDataStack *coreDataStack= [DBCoreDataStack sharedInstance];
+        _managedOC = coreDataStack.managedObjectContext;
     }
     return _managedOC;
 }
@@ -109,11 +108,9 @@
 }
 */
 
-- (void) objectsDownloadedThanksToUpdateUI {
-    NSError *error =nil;
-    [self.fetchedResultsController performFetch:&error];
-    [self.tableView reloadData];
-}
+
+
+
 
 - (void)replaceRefreshButtonWithActivityIndicator {
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -143,6 +140,29 @@
         [self.fetchedResultsController performFetch:&error];
         [self.tableView reloadData];
     }];
+}
+
+
+///////////////////////////////////////////////////////////////////
+//SYNC ENGINE DELEGATE
+#pragma mark - Table view data source
+///////////////////////////////////////////////////////////////////
+- (void) managedObjectContextUpdated {
+    NSError *error =nil;
+    [self.fetchedResultsController performFetch:&error];
+    [self.tableView reloadData];
+}
+
+-(NSString *)entityName {
+    return @"Soundcloud";
+}
+-(NSManagedObjectContext *)managedObjectContext {
+    return self.managedOC;
+}
+
+-(void) mappingManagedObject:(NSManagedObject *)managedObject audio:(NSData *)audio name:(NSString *)name createdAt:(NSDate *)createdAt {
+    [managedObject setValue:audio forKey:@"audio"];
+    [managedObject setValue:name forKey:@"name"];
 }
 
 

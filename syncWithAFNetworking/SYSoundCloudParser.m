@@ -7,11 +7,22 @@
 //
 
 #import "SYSoundCloudParser.h"
+#import "SYSoundCloudSyncEngine.h"
 #import <CoreData/CoreData.h>
-#import "Soundcloud.h"
+
+@interface SYSoundCloudParser ()
+@property (nonatomic, strong) SYSoundCloudSyncEngine *syncEngine;
+
+@end
 
 @implementation SYSoundCloudParser
 
+- (SYSoundCloudSyncEngine *) syncEngine {
+    if (!_syncEngine) {
+        _syncEngine = [SYSoundCloudSyncEngine sharedEngine];
+    }
+    return _syncEngine;
+}
 
 -(NSArray *) objectDictionaryFromResponseObject:(NSDictionary *) responseObject {
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
@@ -36,10 +47,9 @@
     NSURL *file = [objectDictionary valueForKey:@"file"];
     NSString *title = [objectDictionary valueForKey:@"title"];
     NSData *dataFromAudio = [[NSData alloc] initWithContentsOfURL:file];
-    
-    Soundcloud *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:@"Soundcloud" inManagedObjectContext:self.delegateCoreData.backgroundManagedObjectContext];
-    newManagedObject.name = title;
-    newManagedObject.audio = dataFromAudio;
+    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[[SYSoundCloudSyncEngine sharedEngine].delegate entityName] inManagedObjectContext:self.backgroundManagedObjectContext];
+
+    [[SYSoundCloudSyncEngine sharedEngine].delegate mappingManagedObject:newManagedObject audio:dataFromAudio name:title createdAt:nil];
     
     //remove file
     NSError *error;
