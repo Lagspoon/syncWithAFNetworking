@@ -18,7 +18,6 @@
 		092D2CC919539EB8004661C2 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC619539EB8004661C2 /* SYTableViewController.m */; };
 		092D2CCD19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */; };
 		092D2CE519542C44004661C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFAE183B5D1300F5FAFF /* Foundation.framework */; };
-		092D2CEA19542C44004661C2 /* syncWithAFNetworkingLibrary.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 092D2CE919542C44004661C2 /* syncWithAFNetworkingLibrary.h */; };
 		092D2CEC19542C44004661C2 /* syncWithAFNetworkingLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CEB19542C44004661C2 /* syncWithAFNetworkingLibrary.m */; };
 		092D2D0919542CB5004661C2 /* SYSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA319508EC7004661C2 /* SYSyncEngine.m */; };
 		092D2D0A19542CB5004661C2 /* SYHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA91950942D004661C2 /* SYHTTPClient.m */; };
@@ -26,7 +25,6 @@
 		092D2D0D19542CB5004661C2 /* SYSoundCloudSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C9A195056AC004661C2 /* SYSoundCloudSyncEngine.m */; };
 		092D2D0E19542CB5004661C2 /* SYSoundCloudParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C97194C83E6004661C2 /* SYSoundCloudParser.m */; };
 		092D2D0F19542CB5004661C2 /* SYSoundCloudHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */; };
-		092D2D1019542CBD004661C2 /* libcoreDataStackLibrairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */; };
 		092D2D1219542D37004661C2 /* SYSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2CA219508E62004661C2 /* SYSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092D2D1319542D37004661C2 /* SYHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2CA819509421004661C2 /* SYHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092D2D1419542D37004661C2 /* SYParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2CA5195093F9004661C2 /* SYParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +32,27 @@
 		092D2D1719542D37004661C2 /* SYSoundCloudParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C96194C83E6004661C2 /* SYSoundCloudParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092D2D1819542D37004661C2 /* SYSoundCloudHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C93194B3B60004661C2 /* SYSoundCloudHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092D2D1D19545D74004661C2 /* libcoreDataStackLibrairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */; };
+		092D2D3C19546FA7004661C2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0B1945F6A9000215E8 /* AFHTTPRequestOperation.m */; };
+		092D2D3D19546FA7004661C2 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0D1945F6A9000215E8 /* AFHTTPRequestOperationManager.m */; };
+		092D2D3E19546FA7004661C2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0F1945F6A9000215E8 /* AFHTTPSessionManager.m */; };
+		092D2D3F19546FA7004661C2 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C121945F6A9000215E8 /* AFNetworkReachabilityManager.m */; };
+		092D2D4019546FA7004661C2 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C141945F6A9000215E8 /* AFSecurityPolicy.m */; };
+		092D2D4119546FA7004661C2 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C161945F6A9000215E8 /* AFURLConnectionOperation.m */; };
+		092D2D4219546FA7004661C2 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C181945F6A9000215E8 /* AFURLRequestSerialization.m */; };
+		092D2D4319546FA7004661C2 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C1A1945F6A9000215E8 /* AFURLResponseSerialization.m */; };
+		092D2D4419546FA7004661C2 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C1C1945F6A9000215E8 /* AFURLSessionManager.m */; };
+		092D2D4519546FCA004661C2 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C0A1945F6A9000215E8 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4619546FCA004661C2 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C0C1945F6A9000215E8 /* AFHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4719546FCA004661C2 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C0E1945F6A9000215E8 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4819546FCA004661C2 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C101945F6A9000215E8 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4919546FCA004661C2 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C111945F6A9000215E8 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4A19546FCA004661C2 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C131945F6A9000215E8 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4B19546FCA004661C2 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C151945F6A9000215E8 /* AFURLConnectionOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4C19546FCA004661C2 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C171945F6A9000215E8 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4D19546FCA004661C2 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C191945F6A9000215E8 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D4E19546FCA004661C2 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9C1B1945F6A9000215E8 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D501955A7FB004661C2 /* SYParserConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2D4F1955A7FB004661C2 /* SYParserConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092D2D511955A7FB004661C2 /* SYParserConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2D4F1955A7FB004661C2 /* SYParserConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		094F9C1D1945F6A9000215E8 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0B1945F6A9000215E8 /* AFHTTPRequestOperation.m */; };
 		094F9C1E1945F6A9000215E8 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0D1945F6A9000215E8 /* AFHTTPRequestOperationManager.m */; };
 		094F9C1F1945F6A9000215E8 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0F1945F6A9000215E8 /* AFHTTPSessionManager.m */; };
@@ -84,7 +103,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				092D2CEA19542C44004661C2 /* syncWithAFNetworkingLibrary.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +110,9 @@
 
 /* Begin PBXFileReference section */
 		092D2C93194B3B60004661C2 /* SYSoundCloudHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudHTTPClient.h; sourceTree = "<group>"; };
-		092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoundCloudHTTPClient.m; sourceTree = "<group>"; };
+		092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SYSoundCloudHTTPClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		092D2C96194C83E6004661C2 /* SYSoundCloudParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudParser.h; sourceTree = "<group>"; };
-		092D2C97194C83E6004661C2 /* SYSoundCloudParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoundCloudParser.m; sourceTree = "<group>"; };
+		092D2C97194C83E6004661C2 /* SYSoundCloudParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SYSoundCloudParser.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		092D2C99195056AC004661C2 /* SYSoundCloudSyncEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudSyncEngine.h; sourceTree = "<group>"; };
 		092D2C9A195056AC004661C2 /* SYSoundCloudSyncEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSoundCloudSyncEngine.m; sourceTree = "<group>"; };
 		092D2CA219508E62004661C2 /* SYSyncEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSyncEngine.h; sourceTree = "<group>"; };
@@ -120,6 +138,7 @@
 		092D2CFB19542C44004661C2 /* syncWithAFNetworkingLibraryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "syncWithAFNetworkingLibraryTests-Info.plist"; sourceTree = "<group>"; };
 		092D2CFD19542C44004661C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		092D2CFF19542C44004661C2 /* syncWithAFNetworkingLibraryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = syncWithAFNetworkingLibraryTests.m; sourceTree = "<group>"; };
+		092D2D4F1955A7FB004661C2 /* SYParserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYParserConfig.h; sourceTree = "<group>"; };
 		094F9C0A1945F6A9000215E8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		094F9C0B1945F6A9000215E8 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		094F9C0C1945F6A9000215E8 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -155,7 +174,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092D2D1019542CBD004661C2 /* libcoreDataStackLibrairy.a in Frameworks */,
 				092D2CE519542C44004661C2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +331,7 @@
 				092D2CA319508EC7004661C2 /* SYSyncEngine.m */,
 				092D2CA819509421004661C2 /* SYHTTPClient.h */,
 				092D2CA91950942D004661C2 /* SYHTTPClient.m */,
+				092D2D4F1955A7FB004661C2 /* SYParserConfig.h */,
 				092D2CA5195093F9004661C2 /* SYParser.h */,
 				092D2CA61950940E004661C2 /* SYParser.m */,
 				092D2C9D1950577B004661C2 /* soundCloud */,
@@ -340,6 +359,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092D2D501955A7FB004661C2 /* SYParserConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,12 +367,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092D2D511955A7FB004661C2 /* SYParserConfig.h in Headers */,
 				092D2D1219542D37004661C2 /* SYSyncEngine.h in Headers */,
 				092D2D1319542D37004661C2 /* SYHTTPClient.h in Headers */,
 				092D2D1419542D37004661C2 /* SYParser.h in Headers */,
 				092D2D1619542D37004661C2 /* SYSoundCloudSyncEngine.h in Headers */,
 				092D2D1719542D37004661C2 /* SYSoundCloudParser.h in Headers */,
 				092D2D1819542D37004661C2 /* SYSoundCloudHTTPClient.h in Headers */,
+				092D2D4719546FCA004661C2 /* AFHTTPSessionManager.h in Headers */,
+				092D2D4E19546FCA004661C2 /* AFURLSessionManager.h in Headers */,
+				092D2D4519546FCA004661C2 /* AFHTTPRequestOperation.h in Headers */,
+				092D2D4619546FCA004661C2 /* AFHTTPRequestOperationManager.h in Headers */,
+				092D2D4819546FCA004661C2 /* AFNetworking.h in Headers */,
+				092D2D4919546FCA004661C2 /* AFNetworkReachabilityManager.h in Headers */,
+				092D2D4A19546FCA004661C2 /* AFSecurityPolicy.h in Headers */,
+				092D2D4B19546FCA004661C2 /* AFURLConnectionOperation.h in Headers */,
+				092D2D4C19546FCA004661C2 /* AFURLRequestSerialization.h in Headers */,
+				092D2D4D19546FCA004661C2 /* AFURLResponseSerialization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +491,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092D2D3C19546FA7004661C2 /* AFHTTPRequestOperation.m in Sources */,
+				092D2D3D19546FA7004661C2 /* AFHTTPRequestOperationManager.m in Sources */,
+				092D2D3E19546FA7004661C2 /* AFHTTPSessionManager.m in Sources */,
+				092D2D3F19546FA7004661C2 /* AFNetworkReachabilityManager.m in Sources */,
+				092D2D4019546FA7004661C2 /* AFSecurityPolicy.m in Sources */,
+				092D2D4119546FA7004661C2 /* AFURLConnectionOperation.m in Sources */,
+				092D2D4219546FA7004661C2 /* AFURLRequestSerialization.m in Sources */,
+				092D2D4319546FA7004661C2 /* AFURLResponseSerialization.m in Sources */,
+				092D2D4419546FA7004661C2 /* AFURLSessionManager.m in Sources */,
 				092D2D0919542CB5004661C2 /* SYSyncEngine.m in Sources */,
 				092D2D0A19542CB5004661C2 /* SYHTTPClient.m in Sources */,
 				092D2D0B19542CB5004661C2 /* SYParser.m in Sources */,
@@ -548,6 +588,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -562,6 +603,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = include;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

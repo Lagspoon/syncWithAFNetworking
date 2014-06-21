@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SYSyncEngine.h"
+#import "SYParserConfig.h"
 
 @interface SYParser : NSObject
 

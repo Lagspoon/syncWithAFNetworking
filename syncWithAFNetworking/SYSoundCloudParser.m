@@ -29,9 +29,9 @@
     NSArray *arrayOfTracks;
     arrayOfTracks = [responseObject valueForKey:@"tracks"];
     for (NSDictionary * initialTrackDictionary in arrayOfTracks) {
-        NSDictionary *trackDictionary = @{@"URL": [initialTrackDictionary valueForKey:@"download_url"],
-                                          @"title":[initialTrackDictionary valueForKey:@"title"],
-                                          @"createdAt" :[initialTrackDictionary valueForKey:@"created_at"]};
+        NSDictionary *trackDictionary = @{objectDictionaryKeyDownloadURL: [initialTrackDictionary valueForKey:@"download_url"],
+                                          objectDictionaryKeyTitle:[initialTrackDictionary valueForKey:@"title"],
+                                          objectDictionaryKeyCreatedAt :[initialTrackDictionary valueForKey:@"created_at"]};
                                           
         [mutableArray addObject:trackDictionary];
     }
@@ -44,8 +44,8 @@
 
 - (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary {
 
-    NSURL *file = [objectDictionary valueForKey:@"file"];
-    NSString *title = [objectDictionary valueForKey:@"title"];
+    NSURL *file = [objectDictionary valueForKey:objectDictionaryKeyFileURL];
+    NSString *title = [objectDictionary valueForKey:objectDictionaryKeyTitle];
     NSData *dataFromAudio = [[NSData alloc] initWithContentsOfURL:file];
     NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[[SYSoundCloudSyncEngine sharedEngine].delegate entityName] inManagedObjectContext:self.backgroundManagedObjectContext];
 

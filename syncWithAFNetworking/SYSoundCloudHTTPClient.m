@@ -60,8 +60,8 @@
 
 -(void) importTrackDictionary :(NSDictionary *)trackDictionary {
     
-    NSString *URL = [trackDictionary valueForKey:@"URL"];
-    NSString *title = [trackDictionary valueForKey:@"title"];
+    NSString *URL = [trackDictionary valueForKey:objectDictionaryKeyDownloadURL];
+    NSString *title = [trackDictionary valueForKey:objectDictionaryKeyTitle];
     NSURL *completedURL = [NSURL URLWithString:[URL stringByAppendingString:@"?client_id=3dcd38cb94d6a8b051826000a5aa7428"]];
     NSProgress *progress;
     NSMutableDictionary *trackDictionaryUpdated = [NSMutableDictionary dictionaryWithDictionary:trackDictionary];
@@ -70,8 +70,9 @@
                       
                 destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
                     NSURL *URLDestination = [[self.parser filesDirectory] URLByAppendingPathComponent:title];
+                    [trackDictionaryUpdated setValue:URLDestination forKey:objectDictionaryKeyFileURL];
                     return URLDestination; //[targetPath lastPathComponent]];
-                    [trackDictionaryUpdated addEntriesFromDictionary:@{@"file": URLDestination}];
+
                 }
                                               
                 completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
