@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092B26231958371900BF7F43 /* SYParseSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26221958371900BF7F43 /* SYParseSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092B26251958378200BF7F43 /* SYParseSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26241958378200BF7F43 /* SYParseSyncEngine.m */; };
+		092B26261958378200BF7F43 /* SYParseSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26241958378200BF7F43 /* SYParseSyncEngine.m */; };
+		092B26271958378700BF7F43 /* SYParseSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26221958371900BF7F43 /* SYParseSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		092B26291958383500BF7F43 /* SYParseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26281958383500BF7F43 /* SYParseParser.h */; };
+		092B262A1958383500BF7F43 /* SYParseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26281958383500BF7F43 /* SYParseParser.h */; };
+		092B262C1958384900BF7F43 /* SYParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B262B1958384900BF7F43 /* SYParseParser.m */; };
+		092B262D1958384900BF7F43 /* SYParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B262B1958384900BF7F43 /* SYParseParser.m */; };
+		092B262F1958385E00BF7F43 /* SYParseHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */; };
+		092B26301958385E00BF7F43 /* SYParseHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */; };
+		092B26321958387000BF7F43 /* SYParseHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26311958387000BF7F43 /* SYParseHTTPClient.m */; };
+		092B26331958387000BF7F43 /* SYParseHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26311958387000BF7F43 /* SYParseHTTPClient.m */; };
 		092D2C95194B3B60004661C2 /* SYSoundCloudHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */; };
 		092D2C98194C83E6004661C2 /* SYSoundCloudParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C97194C83E6004661C2 /* SYSoundCloudParser.m */; };
 		092D2C9B195056AC004661C2 /* SYSoundCloudSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C9A195056AC004661C2 /* SYSoundCloudSyncEngine.m */; };
@@ -109,6 +121,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		092B26221958371900BF7F43 /* SYParseSyncEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SYParseSyncEngine.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		092B26241958378200BF7F43 /* SYParseSyncEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SYParseSyncEngine.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		092B26281958383500BF7F43 /* SYParseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYParseParser.h; sourceTree = "<group>"; };
+		092B262B1958384900BF7F43 /* SYParseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYParseParser.m; sourceTree = "<group>"; };
+		092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYParseHTTPClient.h; sourceTree = "<group>"; };
+		092B26311958387000BF7F43 /* SYParseHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYParseHTTPClient.m; sourceTree = "<group>"; };
 		092D2C93194B3B60004661C2 /* SYSoundCloudHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudHTTPClient.h; sourceTree = "<group>"; };
 		092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SYSoundCloudHTTPClient.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		092D2C96194C83E6004661C2 /* SYSoundCloudParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSoundCloudParser.h; sourceTree = "<group>"; };
@@ -192,6 +210,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		092B26211958361100BF7F43 /* parse */ = {
+			isa = PBXGroup;
+			children = (
+				092B26221958371900BF7F43 /* SYParseSyncEngine.h */,
+				092B26241958378200BF7F43 /* SYParseSyncEngine.m */,
+				092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */,
+				092B26311958387000BF7F43 /* SYParseHTTPClient.m */,
+				092B262B1958384900BF7F43 /* SYParseParser.m */,
+				092B26281958383500BF7F43 /* SYParseParser.h */,
+			);
+			name = parse;
+			sourceTree = "<group>";
+		};
 		092D2C9D1950577B004661C2 /* soundCloud */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +365,7 @@
 				092D2D4F1955A7FB004661C2 /* SYParserConfig.h */,
 				092D2CA5195093F9004661C2 /* SYParser.h */,
 				092D2CA61950940E004661C2 /* SYParser.m */,
+				092B26211958361100BF7F43 /* parse */,
 				092D2C9D1950577B004661C2 /* soundCloud */,
 				097CFFC9183B5D1300F5FAFF /* Images.xcassets */,
 				097CFFB5183B5D1300F5FAFF /* Supporting Files */,
@@ -359,7 +391,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092B26291958383500BF7F43 /* SYParseParser.h in Headers */,
 				092D2D501955A7FB004661C2 /* SYParserConfig.h in Headers */,
+				092B26231958371900BF7F43 /* SYParseSyncEngine.h in Headers */,
+				092B262F1958385E00BF7F43 /* SYParseHTTPClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +405,7 @@
 				092D2D511955A7FB004661C2 /* SYParserConfig.h in Headers */,
 				092D2D1219542D37004661C2 /* SYSyncEngine.h in Headers */,
 				092D2D1319542D37004661C2 /* SYHTTPClient.h in Headers */,
+				092B26271958378700BF7F43 /* SYParseSyncEngine.h in Headers */,
 				092D2D1419542D37004661C2 /* SYParser.h in Headers */,
 				092D2D1619542D37004661C2 /* SYSoundCloudSyncEngine.h in Headers */,
 				092D2D1719542D37004661C2 /* SYSoundCloudParser.h in Headers */,
@@ -380,6 +416,8 @@
 				092D2D4619546FCA004661C2 /* AFHTTPRequestOperationManager.h in Headers */,
 				092D2D4819546FCA004661C2 /* AFNetworking.h in Headers */,
 				092D2D4919546FCA004661C2 /* AFNetworkReachabilityManager.h in Headers */,
+				092B262A1958383500BF7F43 /* SYParseParser.h in Headers */,
+				092B26301958385E00BF7F43 /* SYParseHTTPClient.h in Headers */,
 				092D2D4A19546FCA004661C2 /* AFSecurityPolicy.h in Headers */,
 				092D2D4B19546FCA004661C2 /* AFURLConnectionOperation.h in Headers */,
 				092D2D4C19546FCA004661C2 /* AFURLRequestSerialization.h in Headers */,
@@ -491,11 +529,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092B26261958378200BF7F43 /* SYParseSyncEngine.m in Sources */,
 				092D2D3C19546FA7004661C2 /* AFHTTPRequestOperation.m in Sources */,
 				092D2D3D19546FA7004661C2 /* AFHTTPRequestOperationManager.m in Sources */,
 				092D2D3E19546FA7004661C2 /* AFHTTPSessionManager.m in Sources */,
+				092B26331958387000BF7F43 /* SYParseHTTPClient.m in Sources */,
 				092D2D3F19546FA7004661C2 /* AFNetworkReachabilityManager.m in Sources */,
 				092D2D4019546FA7004661C2 /* AFSecurityPolicy.m in Sources */,
+				092B262D1958384900BF7F43 /* SYParseParser.m in Sources */,
 				092D2D4119546FA7004661C2 /* AFURLConnectionOperation.m in Sources */,
 				092D2D4219546FA7004661C2 /* AFURLRequestSerialization.m in Sources */,
 				092D2D4319546FA7004661C2 /* AFURLResponseSerialization.m in Sources */,
@@ -514,16 +555,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092B262C1958384900BF7F43 /* SYParseParser.m in Sources */,
 				094F9C211945F6A9000215E8 /* AFSecurityPolicy.m in Sources */,
 				092D2CC919539EB8004661C2 /* SYTableViewController.m in Sources */,
 				094F9C221945F6A9000215E8 /* AFURLConnectionOperation.m in Sources */,
 				092D2CA419508EC7004661C2 /* SYSyncEngine.m in Sources */,
+				092B26251958378200BF7F43 /* SYParseSyncEngine.m in Sources */,
 				094F9C251945F6A9000215E8 /* AFURLSessionManager.m in Sources */,
 				092D2C95194B3B60004661C2 /* SYSoundCloudHTTPClient.m in Sources */,
 				094F9C241945F6A9000215E8 /* AFURLResponseSerialization.m in Sources */,
 				094F9C1E1945F6A9000215E8 /* AFHTTPRequestOperationManager.m in Sources */,
 				094F9C1D1945F6A9000215E8 /* AFHTTPRequestOperation.m in Sources */,
 				094F9C201945F6A9000215E8 /* AFNetworkReachabilityManager.m in Sources */,
+				092B26321958387000BF7F43 /* SYParseHTTPClient.m in Sources */,
 				092D2CC819539EB8004661C2 /* SYDetailTVC.m in Sources */,
 				092D2CAA1950942D004661C2 /* SYHTTPClient.m in Sources */,
 				092D2CA71950940E004661C2 /* SYParser.m in Sources */,

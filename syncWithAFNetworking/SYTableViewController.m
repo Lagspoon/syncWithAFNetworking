@@ -7,9 +7,14 @@
 //
 
 #import "SYTableViewController.h"
+#import "DBCoreDataStack.h"
+
+#import "SYParseSyncEngine.h"
+#import "Parse.h"
+
+
 #import "SYSoundCloudSyncEngine.h"
 #import "Soundcloud.h"
-#import "DBCoreDataStack.h"
 
 @interface SYTableViewController ()
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -86,12 +91,15 @@
 ///////////////////////////////////////////////////////////////////
 
 - (IBAction)refreshButtonTouched:(id)sender {
-    SYSoundCloudSyncEngine *soundCloudSyncEngine = [SYSoundCloudSyncEngine sharedEngine];
+    /*SYSoundCloudSyncEngine *soundCloudSyncEngine = [SYSoundCloudSyncEngine sharedEngine];
     soundCloudSyncEngine.delegate =self;
-    [soundCloudSyncEngine downloadTracksFromPlaylist:@"39491884"];
-    //@"152617555"
+    [soundCloudSyncEngine downloadTracksFromPlaylist:@"39491884"];*/
     
-    //[[SYSoundCloudHTTPClient sharedSoundCloudHTTPClient] getTracksFromSet:[NSString stringWithFormat:@"%i",39491884]];
+    SYParseSyncEngine *parseSyncEngine = [SYParseSyncEngine sharedEngine];
+    parseSyncEngine.delegate =self;
+    [parseSyncEngine downloadClass:@"test2"];
+    
+   
     
 }
 
@@ -154,7 +162,8 @@
 }
 
 -(NSString *)entityName {
-    return @"Soundcloud";
+    //return @"Soundcloud";
+    return @"Parse";
 }
 -(NSManagedObjectContext *)managedObjectContext {
     return self.managedOC;

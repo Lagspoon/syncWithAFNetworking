@@ -9,12 +9,15 @@
 #ifndef syncWithAFNetworking_SYParserConfig_h
 #define syncWithAFNetworking_SYParserConfig_h
 
+//soundcloud
 #define objectDictionaryKeyDownloadURL @"downloadURL"
 #define objectDictionaryKeyTitle @"title"
 #define objectDictionaryKeyCreatedAt @"createdAt"
 #define objectDictionaryKeyFileURL @"fileURL"
 
-
-
+//parse
+#define objectDictionaryKeyGrapheme @"graphemeLetters"
+#define objectDictionaryKeyPhonemeAPI @"phonemeAPI"
+#define objectDictionaryKeyWordArray @"wordArray"
 
 #endif

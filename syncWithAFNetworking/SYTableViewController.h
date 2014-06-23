@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "SYSoundCloudSyncEngine.h"
 
-@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, soundCloudSyncEngineDelegate>
+
+#import "SYSoundCloudSyncEngine.h"
+#import "SYParseSyncEngine.h"
+
+@interface SYTableViewController : UITableViewController <NSFetchedResultsControllerDelegate, soundCloudSyncEngineDelegate, parseSyncEngineDelegate>
 
 @end
