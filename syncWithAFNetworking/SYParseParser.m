@@ -30,11 +30,11 @@
     arrayOfObjects = [responseObject valueForKey:@"results"];
     for (NSDictionary * object in arrayOfObjects) {
         NSDictionary *objectDictionary = @{ objectDictionaryKeyGrapheme :[object valueForKey:@"grapheme"],
-                                           objectDictionaryKeyPhonemeAPI:[object valueForKey:@"phoneme"],
+                                           objectDictionaryKeyPhoneme:[object valueForKey:@"phoneme"],
                                            objectDictionaryKeyCreatedAt :[object valueForKey:@"createdAt"],
-                                           objectDictionaryKeyCreatedAt :[object valueForKey:@"createdAt"]
                                            };
-                                          
+        
+        [self.syncEngine.delegate dictionaryDownloaded:objectDictionary];
         [mutableArray addObject:objectDictionary];
     }
     NSLog(@"objectDictionary %@", [mutableArray description]);
@@ -43,39 +43,54 @@
 
 }
 
-
-- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary {
-
-    
-    NSURL *phonemeAPI = [objectDictionary valueForKey:objectDictionaryKeyPhonemeAPI];
-    NSString *grapheme = [objectDictionary valueForKey:objectDictionaryKeyGrapheme];
-    NSArray *words = [objectDictionary valueForKey:objectDictionaryKeyWordArray];
-
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[[SYParseSyncEngine sharedEngine].delegate entityName] inManagedObjectContext:self.backgroundManagedObjectContext];
-
-    //[[SYParseSyncEngine sharedEngine].delegate mappingManagedObject:newManagedObject audio:dataFromAudio name:title createdAt:nil];
-    
-    //remove file
-    NSError *error;
-//    [[NSFileManager defaultManager] removeItemAtURL:file error:&error];
-    if (error) {
-  //      [self objectsDownloadMonitoringIncrementErrorsBy:1];
-  //      NSLog(@"error in removing file%@", file);
-    } else {
-        [self objectsDownloadMonitoringIncrementDownloadsBy:1];
-    }
 /*
-    if ([self objectsDownloadMonitoringCompleted]) {
-        if ([self objectsDownloadMonitoringStop]) {
-            [self resetObjectsDownloaded];
-        } else {
-            [self saveObjectsDownloaded];
-            NSLog(@"save MOC");
-        }
+- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary {
+    
+    NSString *phoneme = [objectDictionary valueForKey:objectDictionaryKeyPhoneme];
+    NSArray *graphemeArray = [objectDictionary valueForKey:objectDictionaryKeyGrapheme];
+
+    NSManagedObject *phonemeObject  =   [self getUpdatedObjectInEntityName:modelPhonemeEntityName attributeName:@"api" attributeValue:phoneme];
+    [phonemeObject setValue:graphemeArray forKey:@"grapheme"];
+    
+    [self saveObjectsDownloaded];
+    NSLog(@"save MOC");
+}
+*/
+/*
+- (NSManagedObject *) getUpdatedObjectInEntityName:(NSString *)entityName attributeName:(NSString *) attributeName attributeValue:(NSString *)attributeValue {
+    
+    NSFetchRequest *fetchREquest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSPredicate *predicate = [self predicateWithAttributeName:attributeName value:attributeValue];
+    
+    [fetchREquest setPredicate:predicate];
+    NSError *error;
+    NSArray *fectchingResult = [self.backgroundManagedObjectContext executeFetchRequest:fetchREquest error:&error];
+
+    if (error) {
+        NSLog(@"error in fetching%@", [error description]);
+        return nil;
+    } else if ([fectchingResult count] > 0) {
+        NSManagedObject *fetchedObject = [fectchingResult firstObject];
+        NSLog(@"object previously in DB%@",[self description]);
+        return fetchedObject;
+    } else {
+        return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:self.backgroundManagedObjectContext];
     }
- */
 }
 
+- (NSPredicate *) predicateWithAttributeName:(NSString *) attributeName value:(NSString *)attributeValue  {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like %@", attributeName, attributeValue];
+    return predicate;
+}
+*/
 
-
+/*
+- (void) updateObject:(NSManagedObject *)object withDictionary:(NSDictionary *)dictionary {
+    if ([[object.entity name] isEqualToString:modelPhonemeEntityName]) {
+        for (NSString *keyName in [dictionary allKeys]) {
+            [object setValue:[dictionary valueForKey:keyName] forKey:keyName];
+        }
+    }
+}
+*/
 @end

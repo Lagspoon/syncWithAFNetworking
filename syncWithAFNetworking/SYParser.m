@@ -83,6 +83,7 @@
     } else return NO;
 }
 
+/*
 - (BOOL) saveObjectsDownloaded {
     BOOL success = NO;
     success = [self saveBackgroundContext];
@@ -93,9 +94,9 @@
 - (void) resetObjectsDownloaded {
     [self.backgroundManagedObjectContext reset];
 }
+*/
 
-
-
+/*
 // Return the NSManagedObjectContext to be used in the background during sync
 - (NSManagedObjectContext *)backgroundManagedObjectContext {
     if (_backgroundManagedObjectContext != nil) {
@@ -131,4 +132,5 @@
     }];
     return success;
 }
+ */
 @end

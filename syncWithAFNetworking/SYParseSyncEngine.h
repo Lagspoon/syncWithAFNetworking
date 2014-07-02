@@ -11,9 +11,12 @@
 #import "SYSyncEngine.h"
 #import "SYParseHTTPClient.h"
 
-@protocol parseSyncEngineDelegate <syncEngineDelegate>
+@protocol parseParseDelegate
 
-//-(void) mappingManagedObject:(NSManagedObject *)managedObject audio:(NSData *)audio name:(NSString *)name createdAt:(NSDate *)createdAt ;
+-(NSManagedObject *) mappingManagedObjectPhoneme:(NSString *)phoneme inManagedObjectContext:(NSManagedObjectContext *)MOC;
+-(NSManagedObject *) mappingManagedObjectGrapheme:(NSString *)grapheme inManagedObjectContext:(NSManagedObjectContext *)MOC;
+-(NSManagedObject *) mappingManagedObjectWords :(NSArray *)words inManagedObjectContext:(NSManagedObjectContext *)MOC;
+-(void) linkingPhoneme:(NSManagedObject *)phoneme withGrapheme:(NSManagedObject *)grapheme withWords:(NSArray *)words;
 
 @end
 
@@ -21,7 +24,7 @@
 
 + (SYParseSyncEngine *) sharedEngine;
 - (void) downloadClass:(NSString *)className;
-@property (weak, nonatomic) id <parseSyncEngineDelegate> delegate;
+@property (weak, nonatomic) id <parseParseDelegate> parseDelegate;
 
 
 @end

@@ -48,9 +48,4 @@
     });
 }
 
--(void) mappingManagedObject:(NSManagedObject *)managedObject fromEntity:(NSString *(^)(void))entityName withAudio:(NSData *)audio name:(NSString *)name createdAt:(NSDate *)createdAt {
-        
-    
-}
-
 @end

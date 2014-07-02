@@ -10,6 +10,19 @@
 
 @implementation SYHTTPClient
 
+
++ (id)sharedHTTPClientWithBaseURL:(NSString *)baseURL
+{
+    static SYHTTPClient *_sharedHTTPClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedHTTPClient = [[self alloc] initWithBaseURL:[NSURL URLWithString:baseURL]];
+    });
+    
+    return _sharedHTTPClient;
+}
+
+
 - (instancetype)initWithBaseURL:(NSURL *)url
 {
     self = [super initWithBaseURL:url];

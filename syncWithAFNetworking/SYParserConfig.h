@@ -16,8 +16,17 @@
 #define objectDictionaryKeyFileURL @"fileURL"
 
 //parse
-#define objectDictionaryKeyGrapheme @"graphemeLetters"
-#define objectDictionaryKeyPhonemeAPI @"phonemeAPI"
+#define objectDictionaryKeyGrapheme @"grapheme"
+#define objectDictionaryKeyPhoneme @"phoneme"
 #define objectDictionaryKeyWordArray @"wordArray"
 
+//wikimedia
+
+
+
+
+
+//model
+#define modelPhonemeEntityName @"Phoneme"
+#define modelWordEntityName @"Word"
 #endif

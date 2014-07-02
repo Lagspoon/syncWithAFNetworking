@@ -14,7 +14,7 @@
 @implementation SYSyncEngine
 
 
-+ (SYSyncEngine *)sharedEngine
++ (id)sharedEngine
 {
     static SYSyncEngine *_sharedEngine = nil;
     

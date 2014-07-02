@@ -11,7 +11,6 @@
 
 
 @interface SYParseParser : SYParser
--(NSArray *) objectDictionaryFromResponseObject:(NSDictionary *) responseObject;
-- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary;
+//- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary;
 
 @end

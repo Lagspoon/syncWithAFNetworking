@@ -77,7 +77,7 @@
                                               
                 completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
                     NSLog(@"File downloaded to: %@", filePath);
-                    [self.parser newManagedObjectFromObjectDictionary:trackDictionaryUpdated];
+                    //[self.parser newManagedObjectFromObjectDictionary:trackDictionaryUpdated];
                     
                     if (error) {
                         [self.parser objectsDownloadMonitoringIncrementErrorsBy:1];

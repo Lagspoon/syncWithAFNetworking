@@ -11,9 +11,9 @@
 #import "SYSyncEngine.h"
 #import "SYSoundCloudHTTPClient.h"
 
-@protocol soundCloudSyncEngineDelegate <syncEngineDelegate>
+@protocol soundCloudSyncEngineDelegate
 
--(void) mappingManagedObject:(NSManagedObject *)managedObject audio:(NSData *)audio name:(NSString *)name createdAt:(NSDate *)createdAt ;
+//-(void) mappingManagedObject:(NSManagedObject *)managedObject audio:(NSData *)audio name:(NSString *)name createdAt:(NSDate *)createdAt ;
 
 @end
 
@@ -21,7 +21,7 @@
 
 + (SYSoundCloudSyncEngine *) sharedEngine;
 - (void) downloadTracksFromPlaylist:(NSString *) playListID;
-@property (weak, nonatomic) id <soundCloudSyncEngineDelegate> delegate;
+@property (weak, nonatomic) id <soundCloudSyncEngineDelegate> soundcloudDelegate;
 
 
 @end

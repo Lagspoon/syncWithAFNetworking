@@ -9,16 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "SYHTTPClient.h"
+
 @protocol syncEngineDelegate
 
--(NSString *)entityName;
--(NSManagedObjectContext *)managedObjectContext;
-- (void) managedObjectContextUpdated;
+- (void) dictionaryDownloaded:(NSDictionary *)dictionary;
+
 
 @end
 
 @interface SYSyncEngine : NSObject
-+ (SYSyncEngine *)sharedEngine;
++ (id)sharedEngine;
+@property (strong, nonatomic) id HTTPClient;
 @property (weak, nonatomic) id <syncEngineDelegate> delegate;
 
 @end

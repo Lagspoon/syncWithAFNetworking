@@ -12,11 +12,11 @@
 		092B26261958378200BF7F43 /* SYParseSyncEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26241958378200BF7F43 /* SYParseSyncEngine.m */; };
 		092B26271958378700BF7F43 /* SYParseSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26221958371900BF7F43 /* SYParseSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092B26291958383500BF7F43 /* SYParseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26281958383500BF7F43 /* SYParseParser.h */; };
-		092B262A1958383500BF7F43 /* SYParseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26281958383500BF7F43 /* SYParseParser.h */; };
+		092B262A1958383500BF7F43 /* SYParseParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B26281958383500BF7F43 /* SYParseParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092B262C1958384900BF7F43 /* SYParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B262B1958384900BF7F43 /* SYParseParser.m */; };
 		092B262D1958384900BF7F43 /* SYParseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B262B1958384900BF7F43 /* SYParseParser.m */; };
 		092B262F1958385E00BF7F43 /* SYParseHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */; };
-		092B26301958385E00BF7F43 /* SYParseHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */; };
+		092B26301958385E00BF7F43 /* SYParseHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092B26321958387000BF7F43 /* SYParseHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26311958387000BF7F43 /* SYParseHTTPClient.m */; };
 		092B26331958387000BF7F43 /* SYParseHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092B26311958387000BF7F43 /* SYParseHTTPClient.m */; };
 		092D2C95194B3B60004661C2 /* SYSoundCloudHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2C94194B3B60004661C2 /* SYSoundCloudHTTPClient.m */; };
@@ -26,8 +26,6 @@
 		092D2CA71950940E004661C2 /* SYParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA61950940E004661C2 /* SYParser.m */; };
 		092D2CAA1950942D004661C2 /* SYHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CA91950942D004661C2 /* SYHTTPClient.m */; };
 		092D2CC719539EB8004661C2 /* SYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC219539EB8004661C2 /* SYAppDelegate.m */; };
-		092D2CC819539EB8004661C2 /* SYDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC419539EB8004661C2 /* SYDetailTVC.m */; };
-		092D2CC919539EB8004661C2 /* SYTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CC619539EB8004661C2 /* SYTableViewController.m */; };
 		092D2CCD19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */; };
 		092D2CE519542C44004661C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097CFFAE183B5D1300F5FAFF /* Foundation.framework */; };
 		092D2CEC19542C44004661C2 /* syncWithAFNetworkingLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 092D2CEB19542C44004661C2 /* syncWithAFNetworkingLibrary.m */; };
@@ -43,7 +41,6 @@
 		092D2D1619542D37004661C2 /* SYSoundCloudSyncEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C99195056AC004661C2 /* SYSoundCloudSyncEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092D2D1719542D37004661C2 /* SYSoundCloudParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C96194C83E6004661C2 /* SYSoundCloudParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		092D2D1819542D37004661C2 /* SYSoundCloudHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 092D2C93194B3B60004661C2 /* SYSoundCloudHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		092D2D1D19545D74004661C2 /* libcoreDataStackLibrairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */; };
 		092D2D3C19546FA7004661C2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0B1945F6A9000215E8 /* AFHTTPRequestOperation.m */; };
 		092D2D3D19546FA7004661C2 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0D1945F6A9000215E8 /* AFHTTPRequestOperationManager.m */; };
 		092D2D3E19546FA7004661C2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 094F9C0F1945F6A9000215E8 /* AFHTTPSessionManager.m */; };
@@ -80,31 +77,24 @@
 		097CFFB9183B5D1300F5FAFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 097CFFB7183B5D1300F5FAFF /* InfoPlist.strings */; };
 		097CFFBB183B5D1300F5FAFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 097CFFBA183B5D1300F5FAFF /* main.m */; };
 		097CFFCA183B5D1300F5FAFF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097CFFC9183B5D1300F5FAFF /* Images.xcassets */; };
+		098F254D195975DD00FC9A07 /* SYMainVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 098F254B195975DD00FC9A07 /* SYMainVC.h */; };
+		098F254E195975DD00FC9A07 /* SYMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 098F254C195975DD00FC9A07 /* SYMainVC.m */; };
+		098F25521959897800FC9A07 /* SYWikimediaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 098F25501959897800FC9A07 /* SYWikimediaEngine.h */; };
+		098F25531959897800FC9A07 /* SYWikimediaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 098F25501959897800FC9A07 /* SYWikimediaEngine.h */; };
+		098F25541959897800FC9A07 /* SYWikimediaEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 098F25511959897800FC9A07 /* SYWikimediaEngine.m */; };
+		098F25551959897800FC9A07 /* SYWikimediaEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 098F25511959897800FC9A07 /* SYWikimediaEngine.m */; };
+		098F25581959991E00FC9A07 /* SYWikimediaHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 098F25561959991E00FC9A07 /* SYWikimediaHTTPClient.h */; };
+		098F25591959991E00FC9A07 /* SYWikimediaHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 098F25561959991E00FC9A07 /* SYWikimediaHTTPClient.h */; };
+		098F255A1959991E00FC9A07 /* SYWikimediaHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 098F25571959991E00FC9A07 /* SYWikimediaHTTPClient.m */; };
+		098F255B1959991E00FC9A07 /* SYWikimediaHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 098F25571959991E00FC9A07 /* SYWikimediaHTTPClient.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		092D2CD219539F0F004661C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 094F9CAF19473B5D000215E8;
-			remoteInfo = coreDataStackLibrairy;
-		};
-		092D2D1B19545D41004661C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 094F9CAE19473B5D000215E8;
-			remoteInfo = coreDataStackLibrairy;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		092D2CAE1950F4A3004661C2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
-			dstSubfolderSpec = 7;
+			dstSubfolderSpec = 16;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,12 +131,7 @@
 		092D2CA91950942D004661C2 /* SYHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHTTPClient.m; sourceTree = "<group>"; };
 		092D2CC119539EB8004661C2 /* SYAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYAppDelegate.h; path = syncWithAFNetworking/SYAppDelegate.h; sourceTree = "<group>"; };
 		092D2CC219539EB8004661C2 /* SYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYAppDelegate.m; path = syncWithAFNetworking/SYAppDelegate.m; sourceTree = "<group>"; };
-		092D2CC319539EB8004661C2 /* SYDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYDetailTVC.h; path = syncWithAFNetworking/SYDetailTVC.h; sourceTree = "<group>"; };
-		092D2CC419539EB8004661C2 /* SYDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYDetailTVC.m; path = syncWithAFNetworking/SYDetailTVC.m; sourceTree = "<group>"; };
-		092D2CC519539EB8004661C2 /* SYTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYTableViewController.h; path = syncWithAFNetworking/SYTableViewController.h; sourceTree = "<group>"; };
-		092D2CC619539EB8004661C2 /* SYTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYTableViewController.m; path = syncWithAFNetworking/SYTableViewController.m; sourceTree = "<group>"; };
 		092D2CCC19539EEE004661C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = syncWithAFNetworking/Base.lproj/genericSyncWithAFNetworking.storyboard; sourceTree = "<group>"; };
-		092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = coreDataStack.xcodeproj; path = addOn/coreDataStack/coreDataStack.xcodeproj; sourceTree = "<group>"; };
 		092D2CDD19542B06004661C2 /* APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = APIKey.h; path = ../../../APIKey.h; sourceTree = "<group>"; };
 		092D2CE419542C44004661C2 /* libsyncWithAFNetworkingLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsyncWithAFNetworkingLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		092D2CE819542C44004661C2 /* syncWithAFNetworkingLibrary-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncWithAFNetworkingLibrary-Prefix.pch"; sourceTree = "<group>"; };
@@ -185,6 +170,12 @@
 		097CFFBA183B5D1300F5FAFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		097CFFBC183B5D1300F5FAFF /* syncWithAFNetworking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "syncWithAFNetworking-Prefix.pch"; sourceTree = "<group>"; };
 		097CFFC9183B5D1300F5FAFF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		098F254B195975DD00FC9A07 /* SYMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SYMainVC.h; path = syncWithAFNetworking/SYMainVC.h; sourceTree = "<group>"; };
+		098F254C195975DD00FC9A07 /* SYMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SYMainVC.m; path = syncWithAFNetworking/SYMainVC.m; sourceTree = "<group>"; };
+		098F25501959897800FC9A07 /* SYWikimediaEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYWikimediaEngine.h; sourceTree = "<group>"; };
+		098F25511959897800FC9A07 /* SYWikimediaEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYWikimediaEngine.m; sourceTree = "<group>"; };
+		098F25561959991E00FC9A07 /* SYWikimediaHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYWikimediaHTTPClient.h; sourceTree = "<group>"; };
+		098F25571959991E00FC9A07 /* SYWikimediaHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYWikimediaHTTPClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +191,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092D2D1D19545D74004661C2 /* libcoreDataStackLibrairy.a in Frameworks */,
 				097CFFB1183B5D1300F5FAFF /* CoreGraphics.framework in Frameworks */,
 				097CFFB3183B5D1300F5FAFF /* UIKit.framework in Frameworks */,
 				097CFFAF183B5D1300F5FAFF /* Foundation.framework in Frameworks */,
@@ -217,8 +207,8 @@
 				092B26241958378200BF7F43 /* SYParseSyncEngine.m */,
 				092B262E1958385E00BF7F43 /* SYParseHTTPClient.h */,
 				092B26311958387000BF7F43 /* SYParseHTTPClient.m */,
-				092B262B1958384900BF7F43 /* SYParseParser.m */,
 				092B26281958383500BF7F43 /* SYParseParser.h */,
+				092B262B1958384900BF7F43 /* SYParseParser.m */,
 			);
 			name = parse;
 			sourceTree = "<group>";
@@ -242,20 +232,10 @@
 				092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */,
 				092D2CC119539EB8004661C2 /* SYAppDelegate.h */,
 				092D2CC219539EB8004661C2 /* SYAppDelegate.m */,
-				092D2CC319539EB8004661C2 /* SYDetailTVC.h */,
-				092D2CC419539EB8004661C2 /* SYDetailTVC.m */,
-				092D2CC519539EB8004661C2 /* SYTableViewController.h */,
-				092D2CC619539EB8004661C2 /* SYTableViewController.m */,
+				098F254B195975DD00FC9A07 /* SYMainVC.h */,
+				098F254C195975DD00FC9A07 /* SYMainVC.m */,
 			);
 			name = UIForTestPurpose;
-			sourceTree = "<group>";
-		};
-		092D2CCF19539F0F004661C2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		092D2CE619542C44004661C2 /* syncWithAFNetworkingLibrary */ = {
@@ -324,7 +304,6 @@
 			isa = PBXGroup;
 			children = (
 				092D2CDD19542B06004661C2 /* APIKey.h */,
-				092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */,
 				092D2CCA19539EC7004661C2 /* UIForTestPurpose */,
 				097CFFB4183B5D1300F5FAFF /* syncWithAFNetworking */,
 				092D2CE619542C44004661C2 /* syncWithAFNetworkingLibrary */,
@@ -367,6 +346,7 @@
 				092D2CA61950940E004661C2 /* SYParser.m */,
 				092B26211958361100BF7F43 /* parse */,
 				092D2C9D1950577B004661C2 /* soundCloud */,
+				098F254F1959886000FC9A07 /* wikimedia */,
 				097CFFC9183B5D1300F5FAFF /* Images.xcassets */,
 				097CFFB5183B5D1300F5FAFF /* Supporting Files */,
 			);
@@ -384,6 +364,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		098F254F1959886000FC9A07 /* wikimedia */ = {
+			isa = PBXGroup;
+			children = (
+				098F25501959897800FC9A07 /* SYWikimediaEngine.h */,
+				098F25511959897800FC9A07 /* SYWikimediaEngine.m */,
+				098F25561959991E00FC9A07 /* SYWikimediaHTTPClient.h */,
+				098F25571959991E00FC9A07 /* SYWikimediaHTTPClient.m */,
+			);
+			name = wikimedia;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -391,7 +382,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098F25581959991E00FC9A07 /* SYWikimediaHTTPClient.h in Headers */,
 				092B26291958383500BF7F43 /* SYParseParser.h in Headers */,
+				098F25521959897800FC9A07 /* SYWikimediaEngine.h in Headers */,
+				098F254D195975DD00FC9A07 /* SYMainVC.h in Headers */,
 				092D2D501955A7FB004661C2 /* SYParserConfig.h in Headers */,
 				092B26231958371900BF7F43 /* SYParseSyncEngine.h in Headers */,
 				092B262F1958385E00BF7F43 /* SYParseHTTPClient.h in Headers */,
@@ -414,13 +408,15 @@
 				092D2D4E19546FCA004661C2 /* AFURLSessionManager.h in Headers */,
 				092D2D4519546FCA004661C2 /* AFHTTPRequestOperation.h in Headers */,
 				092D2D4619546FCA004661C2 /* AFHTTPRequestOperationManager.h in Headers */,
+				098F25591959991E00FC9A07 /* SYWikimediaHTTPClient.h in Headers */,
 				092D2D4819546FCA004661C2 /* AFNetworking.h in Headers */,
+				092B26301958385E00BF7F43 /* SYParseHTTPClient.h in Headers */,
 				092D2D4919546FCA004661C2 /* AFNetworkReachabilityManager.h in Headers */,
 				092B262A1958383500BF7F43 /* SYParseParser.h in Headers */,
-				092B26301958385E00BF7F43 /* SYParseHTTPClient.h in Headers */,
 				092D2D4A19546FCA004661C2 /* AFSecurityPolicy.h in Headers */,
 				092D2D4B19546FCA004661C2 /* AFURLConnectionOperation.h in Headers */,
 				092D2D4C19546FCA004661C2 /* AFURLRequestSerialization.h in Headers */,
+				098F25531959897800FC9A07 /* SYWikimediaEngine.h in Headers */,
 				092D2D4D19546FCA004661C2 /* AFURLResponseSerialization.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +455,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				092D2D1C19545D41004661C2 /* PBXTargetDependency */,
 			);
 			name = syncWithAFNetworking;
 			productName = syncWithAFNetworking;
@@ -487,12 +482,6 @@
 			mainGroup = 097CFFA2183B5D1300F5FAFF;
 			productRefGroup = 097CFFAC183B5D1300F5FAFF /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 092D2CCF19539F0F004661C2 /* Products */;
-					ProjectRef = 092D2CCE19539F0F004661C2 /* coreDataStack.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				097CFFAA183B5D1300F5FAFF /* syncWithAFNetworking */,
@@ -500,16 +489,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		092D2CD319539F0F004661C2 /* libcoreDataStackLibrairy.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libcoreDataStackLibrairy.a;
-			remoteRef = 092D2CD219539F0F004661C2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		097CFFA9183B5D1300F5FAFF /* Resources */ = {
@@ -529,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098F25551959897800FC9A07 /* SYWikimediaEngine.m in Sources */,
 				092B26261958378200BF7F43 /* SYParseSyncEngine.m in Sources */,
 				092D2D3C19546FA7004661C2 /* AFHTTPRequestOperation.m in Sources */,
 				092D2D3D19546FA7004661C2 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -539,6 +519,7 @@
 				092B262D1958384900BF7F43 /* SYParseParser.m in Sources */,
 				092D2D4119546FA7004661C2 /* AFURLConnectionOperation.m in Sources */,
 				092D2D4219546FA7004661C2 /* AFURLRequestSerialization.m in Sources */,
+				098F255B1959991E00FC9A07 /* SYWikimediaHTTPClient.m in Sources */,
 				092D2D4319546FA7004661C2 /* AFURLResponseSerialization.m in Sources */,
 				092D2D4419546FA7004661C2 /* AFURLSessionManager.m in Sources */,
 				092D2D0919542CB5004661C2 /* SYSyncEngine.m in Sources */,
@@ -557,21 +538,22 @@
 			files = (
 				092B262C1958384900BF7F43 /* SYParseParser.m in Sources */,
 				094F9C211945F6A9000215E8 /* AFSecurityPolicy.m in Sources */,
-				092D2CC919539EB8004661C2 /* SYTableViewController.m in Sources */,
 				094F9C221945F6A9000215E8 /* AFURLConnectionOperation.m in Sources */,
 				092D2CA419508EC7004661C2 /* SYSyncEngine.m in Sources */,
 				092B26251958378200BF7F43 /* SYParseSyncEngine.m in Sources */,
 				094F9C251945F6A9000215E8 /* AFURLSessionManager.m in Sources */,
 				092D2C95194B3B60004661C2 /* SYSoundCloudHTTPClient.m in Sources */,
+				098F254E195975DD00FC9A07 /* SYMainVC.m in Sources */,
 				094F9C241945F6A9000215E8 /* AFURLResponseSerialization.m in Sources */,
 				094F9C1E1945F6A9000215E8 /* AFHTTPRequestOperationManager.m in Sources */,
 				094F9C1D1945F6A9000215E8 /* AFHTTPRequestOperation.m in Sources */,
+				098F255A1959991E00FC9A07 /* SYWikimediaHTTPClient.m in Sources */,
 				094F9C201945F6A9000215E8 /* AFNetworkReachabilityManager.m in Sources */,
 				092B26321958387000BF7F43 /* SYParseHTTPClient.m in Sources */,
-				092D2CC819539EB8004661C2 /* SYDetailTVC.m in Sources */,
 				092D2CAA1950942D004661C2 /* SYHTTPClient.m in Sources */,
 				092D2CA71950940E004661C2 /* SYParser.m in Sources */,
 				092D2C9B195056AC004661C2 /* SYSoundCloudSyncEngine.m in Sources */,
+				098F25541959897800FC9A07 /* SYWikimediaEngine.m in Sources */,
 				092D2C98194C83E6004661C2 /* SYSoundCloudParser.m in Sources */,
 				097CFFBB183B5D1300F5FAFF /* main.m in Sources */,
 				094F9C231945F6A9000215E8 /* AFURLRequestSerialization.m in Sources */,
@@ -581,14 +563,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		092D2D1C19545D41004661C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = coreDataStackLibrairy;
-			targetProxy = 092D2D1B19545D41004661C2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		092D2CCB19539EEE004661C2 /* genericSyncWithAFNetworking.storyboard */ = {

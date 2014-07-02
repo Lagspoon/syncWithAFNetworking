@@ -16,8 +16,6 @@
 		094F9CE919473E61000215E8 /* Flickr.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9CDF19473DD6000215E8 /* Flickr.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		094F9CEA19473E6B000215E8 /* Soundcloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 094F9CE119473DD6000215E8 /* Soundcloud.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		094F9CEB19473F98000215E8 /* DBCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 09057874186DA43A0005308C /* DBCoreDataStack.m */; };
-		094F9CFE19489985000215E8 /* menuCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094F9CFC19489985000215E8 /* menuCoreDataModel.xcdatamodeld */; };
-		094F9CFF194899B4000215E8 /* menuCoreDataModel.xcdatamodeld in CopyFiles */ = {isa = PBXBuildFile; fileRef = 094F9CFC19489985000215E8 /* menuCoreDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +25,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				094F9CFF194899B4000215E8 /* menuCoreDataModel.xcdatamodeld in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +47,8 @@
 		094F9CE019473DD6000215E8 /* Flickr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flickr.m; sourceTree = "<group>"; };
 		094F9CE119473DD6000215E8 /* Soundcloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soundcloud.h; sourceTree = "<group>"; };
 		094F9CE219473DD6000215E8 /* Soundcloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Soundcloud.m; sourceTree = "<group>"; };
-		094F9CFD19489985000215E8 /* menuCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = menuCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		098F253E195968F500FC9A07 /* menuCoreDataModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "menuCoreDataModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		098F253F195968F500FC9A07 /* menuCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = menuCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,7 @@
 		09057832186DA30A0005308C = {
 			isa = PBXGroup;
 			children = (
-				094F9CFC19489985000215E8 /* menuCoreDataModel.xcdatamodeld */,
+				098F253D195968F500FC9A07 /* menuCoreDataModel.xcdatamodeld */,
 				09057846186DA30A0005308C /* coreDataStack */,
 				0905783D186DA30A0005308C /* Frameworks */,
 				0905783C186DA30A0005308C /* Products */,
@@ -199,7 +197,6 @@
 				094F9CE319473DD6000215E8 /* Parse.m in Sources */,
 				094F9CE519473DD6000215E8 /* Soundcloud.m in Sources */,
 				094F9CEB19473F98000215E8 /* DBCoreDataStack.m in Sources */,
-				094F9CFE19489985000215E8 /* menuCoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,14 +342,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		094F9CFC19489985000215E8 /* menuCoreDataModel.xcdatamodeld */ = {
+		098F253D195968F500FC9A07 /* menuCoreDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				094F9CFD19489985000215E8 /* menuCoreDataModel.xcdatamodel */,
+				098F253E195968F500FC9A07 /* menuCoreDataModel 2.xcdatamodel */,
+				098F253F195968F500FC9A07 /* menuCoreDataModel.xcdatamodel */,
 			);
-			currentVersion = 094F9CFD19489985000215E8 /* menuCoreDataModel.xcdatamodel */;
-			name = menuCoreDataModel.xcdatamodeld;
-			path = coreDataStack/menuCoreDataModel.xcdatamodeld;
+			currentVersion = 098F253F195968F500FC9A07 /* menuCoreDataModel.xcdatamodel */;
+			path = menuCoreDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

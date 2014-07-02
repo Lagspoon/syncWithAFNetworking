@@ -34,6 +34,7 @@
                                           objectDictionaryKeyCreatedAt :[initialTrackDictionary valueForKey:@"created_at"]};
                                           
         [mutableArray addObject:trackDictionary];
+        [self.syncEngine.delegate dictionaryDownloaded:trackDictionary];
     }
     NSLog(@"tracksURL %@", [mutableArray description]);
     
@@ -41,15 +42,18 @@
 
 }
 
-
+/*
 - (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary {
 
     NSURL *file = [objectDictionary valueForKey:objectDictionaryKeyFileURL];
     NSString *title = [objectDictionary valueForKey:objectDictionaryKeyTitle];
     NSData *dataFromAudio = [[NSData alloc] initWithContentsOfURL:file];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[[SYSoundCloudSyncEngine sharedEngine].delegate entityName] inManagedObjectContext:self.backgroundManagedObjectContext];
+    
+    
+    
+  //  NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[[SYSoundCloudSyncEngine sharedEngine].delegate entityName] inManagedObjectContext:self.backgroundManagedObjectContext];
 
-    [[SYSoundCloudSyncEngine sharedEngine].delegate mappingManagedObject:newManagedObject audio:dataFromAudio name:title createdAt:nil];
+    //[[SYSoundCloudSyncEngine sharedEngine].delegate mappingManagedObject:newManagedObject audio:dataFromAudio name:title createdAt:nil];
     
     //remove file
     NSError *error;
@@ -63,14 +67,14 @@
     
     if ([self objectsDownloadMonitoringCompleted]) {
         if ([self objectsDownloadMonitoringStop]) {
-            [self resetObjectsDownloaded];
+    //        [self resetObjectsDownloaded];
         } else {
-            [self saveObjectsDownloaded];
+    //        [self saveObjectsDownloaded];
             NSLog(@"save MOC");
         }
     }
 }
-
+*/
 
 
 @end

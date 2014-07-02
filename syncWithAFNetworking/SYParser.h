@@ -22,6 +22,8 @@
 - (void) resetObjectsDownloaded;
 - (BOOL) saveBackgroundContext;
 
-@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+//@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+
+-(NSArray *) objectDictionaryFromResponseObject:(NSDictionary *) responseObject;
 
 @end

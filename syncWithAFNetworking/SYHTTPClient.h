@@ -8,9 +8,11 @@
 
 #import "AFHTTPSessionManager.h"
 #import "SYParser.h"
+#import "APIKey.h"
 
 @interface SYHTTPClient : AFHTTPSessionManager
 
++ (id)sharedHTTPClientWithBaseURL:(NSString *)baseURL;
 - (instancetype)initWithBaseURL:(NSURL *)url;
 
 @end
