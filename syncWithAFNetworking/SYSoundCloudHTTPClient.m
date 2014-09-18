@@ -41,7 +41,7 @@
     [self GET:URLString parameters:nil
 
       success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSArray * arrayOfTrackDictionary = [self.parser objectDictionaryFromResponseObject:responseObject];
+          NSArray * arrayOfTrackDictionary = [self.parser trackDictionaryFromResponseObject:responseObject];
           [self.parser objectsDownloadMonitoringIncrementObjectsBy:[arrayOfTrackDictionary count]];
         
           for (NSDictionary * trackDictionary in arrayOfTrackDictionary) {

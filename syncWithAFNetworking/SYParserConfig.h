@@ -9,19 +9,16 @@
 #ifndef syncWithAFNetworking_SYParserConfig_h
 #define syncWithAFNetworking_SYParserConfig_h
 
-//soundcloud
+#define objectDictionaryKeyEntityName @"entityName"
 #define objectDictionaryKeyDownloadURL @"downloadURL"
 #define objectDictionaryKeyTitle @"title"
 #define objectDictionaryKeyCreatedAt @"createdAt"
 #define objectDictionaryKeyFileURL @"fileURL"
-
-//parse
-#define objectDictionaryKeyGrapheme @"grapheme"
+#define objectDictionaryKeyGrapheme @"graphemeArray"
 #define objectDictionaryKeyPhoneme @"phoneme"
 #define objectDictionaryKeyWordArray @"wordArray"
-
-//wikimedia
-
+#define objectDictionaryKeyUpdatedAt @"updatedAt"
+#define objectDictionaryKeyObjectId @"objectId"
 
 
 

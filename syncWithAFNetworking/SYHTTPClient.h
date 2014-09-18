@@ -14,5 +14,4 @@
 
 + (id)sharedHTTPClientWithBaseURL:(NSString *)baseURL;
 - (instancetype)initWithBaseURL:(NSURL *)url;
-
 @end

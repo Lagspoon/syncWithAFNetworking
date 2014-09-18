@@ -11,6 +11,7 @@
 
 
 @interface SYParseParser : SYParser
-//- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary;
+
+-(void) phonemeDictionaryFromResponseObject:(NSDictionary *) responseObject;
 
 @end

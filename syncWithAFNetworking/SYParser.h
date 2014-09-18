@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SYSyncEngine.h"
+#import <CoreData/CoreData.h>
 #import "SYParserConfig.h"
+
 
 @interface SYParser : NSObject
 
@@ -18,12 +19,6 @@
 - (void) objectsDownloadMonitoringIncrementObjectsBy:(NSUInteger)nb;
 - (BOOL) objectsDownloadMonitoringCompleted;
 - (BOOL) objectsDownloadMonitoringStop;
-- (BOOL) saveObjectsDownloaded;
-- (void) resetObjectsDownloaded;
-- (BOOL) saveBackgroundContext;
-
-//@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
-
--(NSArray *) objectDictionaryFromResponseObject:(NSDictionary *) responseObject;
+- (void) objectsDownloadMonitoringReset;
 
 @end

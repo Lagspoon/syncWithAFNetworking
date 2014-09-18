@@ -7,24 +7,16 @@
 //
 
 #import "SYSoundCloudParser.h"
-#import "SYSoundCloudSyncEngine.h"
 #import <CoreData/CoreData.h>
 
 @interface SYSoundCloudParser ()
-@property (nonatomic, strong) SYSoundCloudSyncEngine *syncEngine;
 
 @end
 
 @implementation SYSoundCloudParser
 
-- (SYSoundCloudSyncEngine *) syncEngine {
-    if (!_syncEngine) {
-        _syncEngine = [SYSoundCloudSyncEngine sharedEngine];
-    }
-    return _syncEngine;
-}
 
--(NSArray *) objectDictionaryFromResponseObject:(NSDictionary *) responseObject {
+-(NSArray *) trackDictionaryFromResponseObject:(NSDictionary *) responseObject {
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
     NSArray *arrayOfTracks;
     arrayOfTracks = [responseObject valueForKey:@"tracks"];
@@ -34,7 +26,7 @@
                                           objectDictionaryKeyCreatedAt :[initialTrackDictionary valueForKey:@"created_at"]};
                                           
         [mutableArray addObject:trackDictionary];
-        [self.syncEngine.delegate dictionaryDownloaded:trackDictionary];
+        [self trackDictionaryToManagedObject:trackDictionary];
     }
     NSLog(@"tracksURL %@", [mutableArray description]);
     
@@ -42,39 +34,8 @@
 
 }
 
-/*
-- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary {
-
-    NSURL *file = [objectDictionary valueForKey:objectDictionaryKeyFileURL];
-    NSString *title = [objectDictionary valueForKey:objectDictionaryKeyTitle];
-    NSData *dataFromAudio = [[NSData alloc] initWithContentsOfURL:file];
+- (void) trackDictionaryToManagedObject:(NSDictionary *)trackDictionary {
     
-    
-    
-  //  NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[[SYSoundCloudSyncEngine sharedEngine].delegate entityName] inManagedObjectContext:self.backgroundManagedObjectContext];
-
-    //[[SYSoundCloudSyncEngine sharedEngine].delegate mappingManagedObject:newManagedObject audio:dataFromAudio name:title createdAt:nil];
-    
-    //remove file
-    NSError *error;
-    [[NSFileManager defaultManager] removeItemAtURL:file error:&error];
-    if (error) {
-        [self objectsDownloadMonitoringIncrementErrorsBy:1];
-        NSLog(@"error in removing file%@", file);
-    } else {
-        [self objectsDownloadMonitoringIncrementDownloadsBy:1];
-    }
-    
-    if ([self objectsDownloadMonitoringCompleted]) {
-        if ([self objectsDownloadMonitoringStop]) {
-    //        [self resetObjectsDownloaded];
-        } else {
-    //        [self saveObjectsDownloaded];
-            NSLog(@"save MOC");
-        }
-    }
 }
-*/
-
 
 @end

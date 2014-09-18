@@ -11,6 +11,7 @@
 
 
 @interface SYSoundCloudParser : SYParser
-//- (void) newManagedObjectFromObjectDictionary:(NSDictionary *)objectDictionary;
+
+-(NSArray *) trackDictionaryFromResponseObject:(NSDictionary *) responseObject;
 
 @end

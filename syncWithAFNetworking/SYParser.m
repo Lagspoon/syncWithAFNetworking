@@ -7,8 +7,6 @@
 //
 
 #import "SYParser.h"
-#import "SYSyncEngine.h"
-#import <CoreData/CoreData.h>
 
 #define objectNumber @"objectNumber"
 #define downloadNumber @"downloadNumber"
@@ -16,19 +14,10 @@
 
 @interface SYParser ()
 
-@property (nonatomic, strong) SYSyncEngine *syncEngine;
 @property (nonatomic, strong) NSMutableDictionary *objectsDownloadMonitoring;
-//objectNumber, downloadNumber, errorNumber
 @end
 
 @implementation SYParser
-
-- (SYSyncEngine *) syncEngine {
-    if (!_syncEngine) {
-        _syncEngine = [SYSyncEngine sharedEngine];
-    }
-    return _syncEngine;
-}
 
 - (NSURL *) filesDirectory {
     NSURL *documentsDirectoryPath = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]];
@@ -83,54 +72,9 @@
     } else return NO;
 }
 
-/*
-- (BOOL) saveObjectsDownloaded {
-    BOOL success = NO;
-    success = [self saveBackgroundContext];
-    [self.syncEngine.delegate managedObjectContextUpdated];
-    return success;
-}
-
-- (void) resetObjectsDownloaded {
-    [self.backgroundManagedObjectContext reset];
-}
-*/
-
-/*
-// Return the NSManagedObjectContext to be used in the background during sync
-- (NSManagedObjectContext *)backgroundManagedObjectContext {
-    if (_backgroundManagedObjectContext != nil) {
-        return _backgroundManagedObjectContext;
-    }
-    
-    if ([self.syncEngine.delegate managedObjectContext]) {
-        _backgroundManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-        [_backgroundManagedObjectContext performBlockAndWait:^{
-            [_backgroundManagedObjectContext setParentContext:[self.syncEngine.delegate managedObjectContext]];
-            //[_backgroundManagedObjectContext setPersistentStoreCoordinator: self.persistentStoreCoordinator];
-            
-        }];
-    }
-    
-    return _backgroundManagedObjectContext;
+- (void) objectsDownloadMonitoringReset {
+    [self.objectsDownloadMonitoring removeAllObjects];
 }
 
 
-- (BOOL) saveBackgroundContext {
-    __block BOOL success = YES;
-    [self.backgroundManagedObjectContext performBlockAndWait:^{
-        NSError *error = nil;
-        if(![self.backgroundManagedObjectContext save:&error]) {
-            success = NO;
-            NSLog(@"Could not save master context due to %@", error);
-        } else {
-            if (![[self.syncEngine.delegate managedObjectContext] save:&error]) {
-                NSLog(@"Cannot save managedObjectContext");
-                success = NO;
-            }
-        }
-    }];
-    return success;
-}
- */
 @end

@@ -8,19 +8,30 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+//#import "SYHTTPClient.h"
 
-#import "SYHTTPClient.h"
+@protocol syncEngineDelegate <NSObject>
 
-@protocol syncEngineDelegate
-
-- (void) dictionaryDownloaded:(NSDictionary *)dictionary;
-
+//- (void) dictionaryDownloaded:(NSDictionary *)dictionary;
+- (void) managedObjectContextUpdated;
+- (NSManagedObjectContext *) managedObjectContext;
 
 @end
 
+
 @interface SYSyncEngine : NSObject
 + (id)sharedEngine;
-@property (strong, nonatomic) id HTTPClient;
 @property (weak, nonatomic) id <syncEngineDelegate> delegate;
+@property (strong, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext;
+
+
+//- (void) downloadClassFromParseDotCom:(NSString *)className;
+- (void) downloadPhoneme;
+
+
+//parser delegate
+- (void) saveObjectsDownloaded;
+- (void) resetObjectsDownloaded;
+- (BOOL) saveBackgroundContext;
 
 @end

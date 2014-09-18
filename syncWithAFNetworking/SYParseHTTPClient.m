@@ -43,14 +43,12 @@
     [self GET:URLString parameters:nil
 
     success:^(NSURLSessionDataTask *task, id responseObject) {
-          NSLog(@"responseObject %@",[responseObject description]);
-        NSArray * arrayOfObjectDictionary = [self.parser objectDictionaryFromResponseObject:responseObject];
-          NSLog(@"sucess %@", [arrayOfObjectDictionary description]);
-          for (NSDictionary *objectDictionary in arrayOfObjectDictionary) {
-              NSLog(@"objectDic %@",[objectDictionary description]);
-             // [self.parser newManagedObjectFromObjectDictionary:objectDictionary];
-          }
-      }
+        
+        NSLog(@"responseObject %@",[responseObject description]);
+        [self.parser phonemeDictionaryFromResponseObject:responseObject];
+    }
+
+     
     failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"failure %@", [error description]);
     }];

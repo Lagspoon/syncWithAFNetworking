@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SYParseSyncEngine.h"
-#import "SYSoundCloudSyncEngine.h"
-#import "SYWikimediaEngine.h"
+#import "SYSyncEngine.h"
+
+//#import "SYParseSyncEngine.h"
+//#import "SYSoundCloudSyncEngine.h"
+//#import "SYWikimediaEngine.h"
 
 @interface SYMainVC : UIViewController <syncEngineDelegate>
 
